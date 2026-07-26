@@ -18,14 +18,14 @@
 </style>
 </helmet>
 
-<div style="font-family:Calibri,'Segoe UI',system-ui,sans-serif;color:#0A0C18;background:#fff;min-height:100vh;">
+<div id="site-root" style="font-family:Calibri,'Segoe UI',system-ui,sans-serif;color:#0A0C18;background:#fff;min-height:100vh;">
 
   <!-- ================= HEADER ================= -->
   <header style="position:sticky;top:0;z-index:100;box-shadow:0 1px 0 rgba(10,12,24,0.06);">
     <!-- utility bar -->
     <div style="background:#0A0C18;color:#B8BCCE;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:36px;display:flex;align-items:center;justify-content:space-between;font-family:Consolas,'SF Mono',Menlo,monospace;font-size:11px;letter-spacing:0.5px;">
-        <span style="display:flex;align-items:center;gap:8px;"><span style="color:#FFCC00;">●</span> SACRAMENTO, CA · STEAM FOR AGES 5&ndash;19</span>
+        <span style="display:flex;align-items:center;gap:8px;"><span style="color:#FFCC00;">●</span> SACRAMENTO, CA · STEAM FOR AGES 5–19</span>
         <div style="display:flex;align-items:center;gap:16px;">
           <a data-page="parent-login" onClick="{{ handleNav }}" style="cursor:pointer;color:#B8BCCE;">PARENT LOGIN</a>
           <span style="opacity:0.4;">/</span>
@@ -36,9 +36,8 @@
     <!-- main nav -->
     <div style="background:#fff;border-bottom:1px solid #e6e9f4;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-        <div data-page="home" onClick="{{ handleNav }}" style="cursor:pointer;display:flex;flex-direction:column;line-height:1;flex-shrink:0;">
-          <span style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:25px;letter-spacing:-1px;"><span style="color:#1A3EE8;">e</span><span style="color:#0A0C18;">STEAM</span><span style="color:#FF6B1A;">ED</span></span>
-          <span style="font-family:Consolas,monospace;font-size:9px;letter-spacing:5px;color:#7B81A0;margin-top:3px;padding-left:1px;">ACADEMY</span>
+        <div data-page="home" onClick="{{ handleNav }}" style="cursor:pointer;display:flex;align-items:center;gap:13px;flex-shrink:0;">
+          <dc-import name="Badge" hint-size="56px,67px" style="width:56px;height:67px;display:block;flex-shrink:0;"></dc-import>
         </div>
         <nav style="display:flex;align-items:center;gap:4px;font-family:Calibri,'Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:600;">
           <a data-page="home" onClick="{{ handleNav }}" style="cursor:pointer;padding:8px 12px;border-radius:4px;color:#1A1D30;">Home</a>
@@ -103,11 +102,11 @@
       <div style="max-width:1240px;margin:0 auto;padding:72px 32px 80px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;position:relative;">
         <div>
           <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:22px;">Where Curiosity Meets Competition</div>
-          <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:62px;line-height:1.0;letter-spacing:-2px;margin:0 0 22px;">Where Kids <span style="color:#FF6B1A;">Build,</span> <span style="color:#1A3EE8;">Create,</span> &amp; <span style="color:#FFCC00;">Launch.</span></h1>
-          <p style="font-size:19px;line-height:1.55;color:#B8BCCE;max-width:520px;margin:0 0 32px;">STEAM-powered programs for youth ages 5&ndash;19 &mdash; in our makerspace, on competition teams, and in your school.</p>
+          <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:62px;line-height:1.0;letter-spacing:-2px;margin:0 0 22px;animation:fadeUp .6s ease both;">Where Kids <span style="color:#FF6B1A;">Build,</span> <span style="color:#1A3EE8;">Create,</span> &amp; <span style="color:#FFCC00;">Launch.</span></h1>
+          <p style="font-size:19px;line-height:1.55;color:#B8BCCE;max-width:520px;margin:0 0 32px;animation:fadeUp .6s ease .1s both;">STEAM-powered programs for youth ages 5–19 — in our makerspace, on competition teams, and in your school.</p>
           <div style="display:flex;flex-wrap:wrap;gap:12px;">
             <button data-page="programs" onClick="{{ handleNav }}" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:none;border-radius:5px;box-shadow:0 6px 20px rgba(255,107,26,0.35);">Explore Our Programs</button>
-            <button data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;background:transparent;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:1.5px solid #2c3350;border-radius:5px;">Find a Class Near You</button>
+            <button data-page="available-classes" onClick="{{ handleNav }}" style="cursor:pointer;background:transparent;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:1.5px solid #2c3350;border-radius:5px;">Find a Class Near You</button>
             <button data-page="enroll" onClick="{{ handleNav }}" style="cursor:pointer;background:transparent;color:#FFCC00;font-weight:700;font-size:16px;padding:14px 18px;border:none;display:flex;align-items:center;gap:7px;">Enroll Now <span>→</span></button>
           </div>
         </div>
@@ -126,7 +125,7 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <div style="display:flex;align-items:end;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:12px;">
           <div>
-            <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:12px;">// Three Ways to Learn</div>
+            <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:12px;">THREE WAYS TO LEARN</div>
             <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:40px;letter-spacing:-1px;margin:0;color:#0A0C18;">Pick your path</h2>
           </div>
           <a data-page="programs" onClick="{{ handleNav }}" style="cursor:pointer;font-weight:700;color:#1A3EE8;display:flex;align-items:center;gap:6px;">Compare all programs →</a>
@@ -173,7 +172,7 @@
         <div>
           <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:16px;">// Why eSTEAMED</div>
           <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:38px;letter-spacing:-1px;line-height:1.1;margin:0 0 20px;">Not just screen time.<br>They <span style="color:#FF6B1A;">build it.</span></h2>
-          <p style="font-size:18px;line-height:1.6;color:#56607a;margin:0 0 28px;max-width:480px;">We believe every kid deserves hands-on STEAM education. At eSTEAMED, students don't just learn about technology &mdash; they build it.</p>
+          <p style="font-size:18px;line-height:1.6;color:#56607a;margin:0 0 28px;max-width:480px;">We believe every kid deserves hands-on STEAM education. At eSTEAMED, students don't just learn about technology — they build it.</p>
           <button data-page="about" onClick="{{ handleNav }}" style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:16px;padding:13px 24px;border:none;border-radius:5px;">Learn More About Us →</button>
         </div>
       </div>
@@ -191,12 +190,7 @@
           <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:14px 22px;font-family:Consolas,monospace;font-size:13px;letter-spacing:1px;font-weight:700;">TRUSD</div>
           <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:14px 22px;font-family:Consolas,monospace;font-size:13px;letter-spacing:1px;font-weight:700;">NUSD</div>
         </div>
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:inline-flex;gap:10px;align-items:center;background:rgba(255,204,0,0.16);border:1px dashed #FFCC00;border-radius:5px;padding:8px 14px;margin-top:24px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#0A0C18;background:#FFCC00;padding:2px 6px;border-radius:3px;white-space:nowrap;">DRAFT NOTE</span>
-            <span style="font-family:Calibri,sans-serif;font-size:13px;color:#fff;">Replace with real district partner logos once available.</span>
-          </div>
-        </sc-if>
+
       </div>
     </section>
 
@@ -204,7 +198,7 @@
     <section style="background:#F3F4FA;padding:74px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
         <div>
-          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:16px;">// Find Us</div>
+          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:16px;">FIND US</div>
           <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:36px;letter-spacing:-1px;margin:0 0 26px;">Two Sacramento locations</h2>
           <div style="display:flex;flex-direction:column;gap:18px;">
             <div style="background:#fff;border:1px solid #e6e9f4;border-radius:10px;padding:20px 22px;border-left:4px solid #FF6B1A;">
@@ -218,9 +212,8 @@
           </div>
           <button data-page="contact" onClick="{{ handleNav }}" style="cursor:pointer;margin-top:24px;background:transparent;color:#1A3EE8;font-weight:700;font-size:16px;padding:0;border:none;display:flex;align-items:center;gap:7px;">Get Directions →</button>
         </div>
-        <div style="aspect-ratio:4/3.4;border-radius:12px;background:repeating-linear-gradient(135deg,#e7eaf4,#e7eaf4 14px,#dee2f0 14px,#dee2f0 28px);border:1px solid #d8dcea;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
-          <span style="font-size:30px;">🗺️</span>
-          <span style="font-family:Consolas,monospace;font-size:12px;letter-spacing:1px;color:#7B81A0;text-transform:uppercase;">Map embed</span>
+        <div style="aspect-ratio:4/3.4;border-radius:12px;overflow:hidden;border:1px solid #d8dcea;box-shadow:0 8px 24px rgba(10,12,24,0.08);">
+          <iframe title="eSTEAMED Academy &amp; Maker Space location" src="https://www.google.com/maps?q=4625+44th+Street+Suite+9,+Sacramento,+CA+95820&amp;output=embed" style="width:100%;height:100%;border:0;display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
@@ -245,39 +238,113 @@
   <div>
     <section style="background:#0A0C18;color:#fff;padding:64px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">// Programs</div>
-        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 18px;">Three distinct tracks.<br>One mission.</h1>
-        <p style="font-size:19px;color:#B8BCCE;max-width:620px;margin:0;line-height:1.55;">eSTEAMED offers three distinct program tracks &mdash; each designed to meet youth where they are and take them further.</p>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">PROGRAMS</div>
+        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 18px;animation:fadeUp .6s ease both;">Three distinct tracks.<br>One mission.</h1>
+        <p style="font-size:19px;color:#B8BCCE;max-width:620px;margin:0;line-height:1.55;">eSTEAMED offers three distinct program tracks — each designed to meet youth where they are and take them further.</p>
       </div>
     </section>
-    <section style="background:#fff;padding:64px 0;">
-      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:flex;flex-direction:column;gap:24px;">
-        <div data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;display:grid;grid-template-columns:300px 1fr auto;gap:32px;align-items:center;background:#fff;border:1px solid #e6e9f4;border-left:6px solid #FF6B1A;border-radius:12px;padding:32px;">
-          <div style="aspect-ratio:4/3;border-radius:8px;background:repeating-linear-gradient(135deg,#fff1e8,#fff1e8 12px,#ffe6d6 12px,#ffe6d6 24px);display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11px;color:#c97a3d;text-transform:uppercase;letter-spacing:1px;">Makerspace photo</div>
-          <div>
-            <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#FF6B1A;font-weight:700;margin-bottom:10px;">MAKER SPACE · 44TH STREET</div>
-            <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:28px;letter-spacing:-0.5px;margin:0 0 10px;">eSTEAMED Academy &amp; Maker Space</h2>
-            <p style="font-size:16px;color:#56607a;line-height:1.55;margin:0;max-width:560px;">Open classes and hands-on build sessions. Game dev, 3D printing, AI Explorers, coding fundamentals, and drop-in Makers Mondays.</p>
+    <section style="background:#f5f6fb;padding:64px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:flex;flex-direction:column;gap:26px;">
+
+        <!-- ACADEMY -->
+        <div data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;display:flex;background:#fff;border:1px solid #e6e9f4;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(15,20,48,0.05);transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 20px 48px rgba(255,107,26,0.16);">
+          <div style="position:relative;width:340px;flex-shrink:0;background:linear-gradient(150deg,#fff4ec,#ffe0cc);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <span style="position:absolute;top:-24px;right:6px;font-family:'Arial Black',Arial,sans-serif;font-size:150px;line-height:1;color:rgba(255,107,26,0.12);">01</span>
+            <div style="position:relative;width:96px;height:96px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(255,107,26,0.25);display:flex;align-items:center;justify-content:center;font-size:44px;">🛠️</div>
+            <span style="position:absolute;bottom:16px;left:16px;font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#c97a3d;background:rgba(255,255,255,0.7);padding:4px 8px;border-radius:5px;">MAKERSPACE PHOTO</span>
           </div>
-          <span style="font-weight:700;color:#FF6B1A;white-space:nowrap;">View →</span>
+          <div style="padding:34px 38px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+              <span style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#FF6B1A;font-weight:700;">MAKER SPACE · 44TH STREET</span>
+              <span style="font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#56607a;background:#f2f3f8;border:1px solid #e6e9f4;padding:4px 9px;border-radius:20px;">YEAR-ROUND · AGES 5–19</span>
+            </div>
+            <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:27px;letter-spacing:-0.5px;margin:0 0 10px;">eSTEAMED Academy &amp; Maker Space</h2>
+            <p style="font-size:15.5px;color:#56607a;line-height:1.55;margin:0 0 18px;max-width:600px;">Open classes and hands-on build sessions. Come in, build something, and take it home.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;">
+              <span style="font-size:12.5px;font-weight:700;color:#c15a13;background:#fff1e8;padding:6px 12px;border-radius:7px;">Game Dev</span>
+              <span style="font-size:12.5px;font-weight:700;color:#c15a13;background:#fff1e8;padding:6px 12px;border-radius:7px;">3D Printing</span>
+              <span style="font-size:12.5px;font-weight:700;color:#c15a13;background:#fff1e8;padding:6px 12px;border-radius:7px;">AI Explorers</span>
+              <span style="font-size:12.5px;font-weight:700;color:#c15a13;background:#fff1e8;padding:6px 12px;border-radius:7px;">Coding</span>
+            </div>
+            <div style="margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;">
+              <span style="display:inline-flex;align-items:center;gap:8px;background:#FF6B1A;color:#fff;font-weight:700;font-size:14.5px;padding:11px 20px;border-radius:8px;box-shadow:0 6px 16px rgba(255,107,26,0.28);">Explore Academy <span>→</span></span>
+              <button data-page="enroll" onClick="{{ handleNavStop }}" style="cursor:pointer;position:relative;z-index:1;background:#fff;color:#FF6B1A;font-weight:700;font-size:14.5px;padding:11px 20px;border:1.5px solid #FF6B1A;border-radius:8px;">Enroll Now</button>
+            </div>
+          </div>
         </div>
-        <div data-page="program-labs" onClick="{{ handleNav }}" style="cursor:pointer;display:grid;grid-template-columns:300px 1fr auto;gap:32px;align-items:center;background:#fff;border:1px solid #e6e9f4;border-left:6px solid #FFCC00;border-radius:12px;padding:32px;">
-          <div style="aspect-ratio:4/3;border-radius:8px;background:repeating-linear-gradient(135deg,#fff9e0,#fff9e0 12px,#fff2c2 12px,#fff2c2 24px);display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11px;color:#bb9410;text-transform:uppercase;letter-spacing:1px;">Robotics photo</div>
-          <div>
-            <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#C99E00;font-weight:700;margin-bottom:10px;">COMPETITION · SEASONAL</div>
-            <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:28px;letter-spacing:-0.5px;margin:0 0 10px;">eSTEAMED Labs &amp; Leagues</h2>
-            <p style="font-size:16px;color:#56607a;line-height:1.55;margin:0;max-width:560px;">Robotics, eSports, and STEAM competitions with seasonal schedules. Learn it in the fall, compete in the spring.</p>
+
+        <!-- LABS & LEAGUES -->
+        <div data-page="program-labs" onClick="{{ handleNav }}" style="cursor:pointer;display:flex;background:#fff;border:1px solid #e6e9f4;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(15,20,48,0.05);transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 20px 48px rgba(201,158,0,0.16);">
+          <div style="position:relative;width:340px;flex-shrink:0;background:linear-gradient(150deg,#fff9e6,#ffefb8);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <span style="position:absolute;top:-24px;right:6px;font-family:'Arial Black',Arial,sans-serif;font-size:150px;line-height:1;color:rgba(201,158,0,0.16);">02</span>
+            <div style="position:relative;width:96px;height:96px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(201,158,0,0.28);display:flex;align-items:center;justify-content:center;font-size:44px;">🏆</div>
+            <span style="position:absolute;bottom:16px;left:16px;font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#a9840e;background:rgba(255,255,255,0.7);padding:4px 8px;border-radius:5px;">COMPETITION PHOTO</span>
           </div>
-          <span style="font-weight:700;color:#C99E00;white-space:nowrap;">View →</span>
+          <div style="padding:34px 38px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+              <span style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#C99E00;font-weight:700;">COMPETITION · SEASONAL</span>
+              <span style="font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#56607a;background:#f2f3f8;border:1px solid #e6e9f4;padding:4px 9px;border-radius:20px;">FALL + SPRING · AGES 8–19</span>
+            </div>
+            <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:27px;letter-spacing:-0.5px;margin:0 0 10px;">eSTEAMED Labs &amp; Leagues</h2>
+            <p style="font-size:15.5px;color:#56607a;line-height:1.55;margin:0 0 18px;max-width:600px;">Learn it in the fall, compete in the spring. Robotics, eSports, and STEAM competition teams.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;">
+              <span style="font-size:12.5px;font-weight:700;color:#8a6c00;background:#fff6d6;padding:6px 12px;border-radius:7px;">Robotics</span>
+              <span style="font-size:12.5px;font-weight:700;color:#8a6c00;background:#fff6d6;padding:6px 12px;border-radius:7px;">eSports</span>
+              <span style="font-size:12.5px;font-weight:700;color:#8a6c00;background:#fff6d6;padding:6px 12px;border-radius:7px;">iRacing</span>
+              <span style="font-size:12.5px;font-weight:700;color:#8a6c00;background:#fff6d6;padding:6px 12px;border-radius:7px;">STEAM Leagues</span>
+            </div>
+            <div style="margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;">
+              <span style="display:inline-flex;align-items:center;gap:8px;background:#C99E00;color:#fff;font-weight:700;font-size:14.5px;padding:11px 20px;border-radius:8px;box-shadow:0 6px 16px rgba(201,158,0,0.3);">See the Leagues <span>→</span></span>
+              <button data-page="enroll" onClick="{{ handleNavStop }}" style="cursor:pointer;position:relative;z-index:1;background:#fff;color:#C99E00;font-weight:700;font-size:14.5px;padding:11px 20px;border:1.5px solid #C99E00;border-radius:8px;">Register Interest</button>
+            </div>
+          </div>
         </div>
-        <div data-page="program-expanded" onClick="{{ handleNav }}" style="cursor:pointer;display:grid;grid-template-columns:300px 1fr auto;gap:32px;align-items:center;background:#fff;border:1px solid #e6e9f4;border-left:6px solid #1A3EE8;border-radius:12px;padding:32px;">
-          <div style="aspect-ratio:4/3;border-radius:8px;background:repeating-linear-gradient(135deg,#e8edff,#e8edff 12px,#d6e0ff 12px,#d6e0ff 24px);display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11px;color:#4a63c9;text-transform:uppercase;letter-spacing:1px;">Classroom photo</div>
-          <div>
-            <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#1A3EE8;font-weight:700;margin-bottom:10px;">SCHOOL PARTNERSHIPS · ELOP</div>
-            <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:28px;letter-spacing:-0.5px;margin:0 0 10px;">eSTEAMED Expanded Learning</h2>
-            <p style="font-size:16px;color:#56607a;line-height:1.55;margin:0;max-width:560px;">STEM enrichment, eSports, and youth development brought directly to your school. A licensed ELOP provider.</p>
+
+        <!-- EXPANDED LEARNING -->
+        <div data-page="program-expanded" onClick="{{ handleNav }}" style="cursor:pointer;display:flex;background:#fff;border:1px solid #e6e9f4;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(15,20,48,0.05);transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 20px 48px rgba(26,62,232,0.16);">
+          <div style="position:relative;width:340px;flex-shrink:0;background:linear-gradient(150deg,#eaeeff,#d2ddff);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+            <span style="position:absolute;top:-24px;right:6px;font-family:'Arial Black',Arial,sans-serif;font-size:150px;line-height:1;color:rgba(26,62,232,0.12);">03</span>
+            <div style="position:relative;width:96px;height:96px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(26,62,232,0.25);display:flex;align-items:center;justify-content:center;font-size:44px;">🏫</div>
+            <span style="position:absolute;bottom:16px;left:16px;font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#4a63c9;background:rgba(255,255,255,0.7);padding:4px 8px;border-radius:5px;">CLASSROOM PHOTO</span>
           </div>
-          <span style="font-weight:700;color:#1A3EE8;white-space:nowrap;">View →</span>
+          <div style="padding:34px 38px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+              <span style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#1A3EE8;font-weight:700;">SCHOOL PARTNERSHIPS · ELOP</span>
+              <span style="font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#56607a;background:#f2f3f8;border:1px solid #e6e9f4;padding:4px 9px;border-radius:20px;">AT YOUR SCHOOL · K–12</span>
+            </div>
+            <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:27px;letter-spacing:-0.5px;margin:0 0 10px;">eSTEAMED Expanded Learning</h2>
+            <p style="font-size:15.5px;color:#56607a;line-height:1.55;margin:0 0 18px;max-width:600px;">We bring STEAM enrichment directly to your school. A licensed ELOP provider across the region.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;">
+              <span style="font-size:12.5px;font-weight:700;color:#1A3EE8;background:#e8edff;padding:6px 12px;border-radius:7px;">6 Districts</span>
+              <span style="font-size:12.5px;font-weight:700;color:#1A3EE8;background:#e8edff;padding:6px 12px;border-radius:7px;">On-site</span>
+              <span style="font-size:12.5px;font-weight:700;color:#1A3EE8;background:#e8edff;padding:6px 12px;border-radius:7px;">Standards-aligned</span>
+              <span style="font-size:12.5px;font-weight:700;color:#1A3EE8;background:#e8edff;padding:6px 12px;border-radius:7px;">eSports</span>
+            </div>
+            <div style="margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;">
+              <span style="display:inline-flex;align-items:center;gap:8px;background:#1A3EE8;color:#fff;font-weight:700;font-size:14.5px;padding:11px 20px;border-radius:8px;box-shadow:0 6px 16px rgba(26,62,232,0.28);">Partner With Us <span>→</span></span>
+              <button data-page="schools" onClick="{{ handleNavStop }}" style="cursor:pointer;position:relative;z-index:1;background:#fff;color:#1A3EE8;font-weight:700;font-size:14.5px;padding:11px 20px;border:1.5px solid #1A3EE8;border-radius:8px;">I'm Interested</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ AVAILABLE CLASSES (Assembly enrollment catalog) ============ -->
+  <sc-if value="{{ isAvailableClasses }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="background:#fff;padding:70px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <div style="max-width:680px;margin:0 auto 32px;text-align:center;">
+          <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:36px;letter-spacing:-1px;margin:0 0 12px;color:#0A0C18;">Available Classes</h1>
+          <p style="font-size:16.5px;color:#56607a;line-height:1.55;margin:0;">Browse our current classes and complete your registration through our enrollment system.</p>
+        </div>
+        <!-- Room for future intro content / filters above the catalog embed -->
+        <div style="border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(15,20,48,0.08);border:1px solid #e6e9f4;">
+          <!-- ASSEMBLY CATALOG EMBED: paste/keep the Assembly iframe below. This is the source of truth — new programs published in Assembly appear here automatically. -->
+          <iframe src="https://app.assemblyk12.com/embed/discovery/organization/2ac37c5f-1759-474a-91f7-e1735d1cc2b3" title="eS.T.E.A.M.E.D Academy & Maker Space Programs" style="width:100%;min-height:1400px;height:80vh;border:0;display:block;"></iframe>
         </div>
       </div>
     </section>
@@ -290,10 +357,11 @@
     <section style="background:#FF6B1A;color:#fff;padding:60px 0;position:relative;overflow:hidden;">
       <div style="position:absolute;top:-100px;right:-60px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,0.10);"></div>
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;position:relative;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:0.9;">PROGRAM // ACADEMY &amp; MAKER SPACE</div>
-        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 16px;">eSTEAMED Academy<br>&amp; Maker Space</h1>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:0.9;"><br></div>
+        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 16px;animation:fadeUp .6s ease both;">eSTEAMED Academy<br>&amp; Maker Space</h1>
         <p style="font-size:21px;font-weight:700;margin:0 0 8px;">Come in. Build something. Take it home.</p>
-        <p style="font-size:17px;max-width:640px;line-height:1.55;margin:0;opacity:0.95;">Our makerspace at 4625 44th Street is where ideas become real things. Every class is designed around making &mdash; not just watching. Students use professional equipment, learn real skills, and walk out with something they built themselves.</p>
+        <p style="font-size:17px;max-width:640px;line-height:1.55;margin:0 0 26px;opacity:0.95;">Our makerspace at 4625 44th Street is where ideas become real things. Every class is designed around making — not just watching. Students use professional equipment, learn real skills, and walk out with something they built themselves.</p>
+        <button data-page="enroll" onClick="{{ handleNav }}" style="cursor:pointer;background:#0A0C18;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:5px;">Enroll Now →</button>
       </div>
     </section>
     <section style="background:#fff;padding:64px 0;">
@@ -303,47 +371,59 @@
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;">
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:26px;background:#fff;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:21px;margin:0 0 8px;letter-spacing:-0.5px;">Game Development</h3>
-            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 10&ndash;18 · BEGINNER&ndash;INTERMEDIATE</div>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 14px;">Students design and build their own video games using industry-standard tools &mdash; game mechanics, level design, character creation, and basic programming logic.</p>
-            <div style="background:#fff7f2;border-radius:7px;padding:12px 14px;font-size:14px;color:#9a4d1a;"><b>They'll make:</b> A playable game they designed and built &mdash; ready to share.</div>
+            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 10–18 · BEGINNER–INTERMEDIATE</div>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 14px;">Students design and build their own video games using industry-standard tools — game mechanics, level design, character creation, and basic programming logic.</p>
+            <div style="background:#fff7f2;border-radius:7px;padding:12px 14px;font-size:14px;color:#9a4d1a;margin-bottom:14px;"><b>They'll make:</b> A playable game they designed and built — ready to share.</div>
+            <div style="font-size:13px;color:#8a8fa8;font-style:italic;margin-bottom:16px;">Schedule &amp; pricing: to be announced.</div>
+            <button data-page="available-classes" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#FF6B1A;font-weight:700;font-size:13.5px;padding:9px 16px;border:1.5px solid #FF6B1A;border-radius:6px;">I'm Interested →</button>
           </div>
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:26px;background:#fff;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:21px;margin:0 0 8px;letter-spacing:-0.5px;">3D Printing Class</h3>
-            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 8&ndash;18</div>
+            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 8–18</div>
             <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 14px;">Introduction to 3D modeling and printing. Students learn beginner-friendly CAD software and watch their designs come to life on our 3D printers.</p>
-            <div style="background:#fff7f2;border-radius:7px;padding:12px 14px;font-size:14px;color:#9a4d1a;"><b>They'll make:</b> A custom 3D-printed object &mdash; designed by the student, printed in class.</div>
+            <div style="background:#fff7f2;border-radius:7px;padding:12px 14px;font-size:14px;color:#9a4d1a;margin-bottom:14px;"><b>They'll make:</b> A custom 3D-printed object — designed by the student, printed in class.</div>
+            <div style="font-size:13px;color:#8a8fa8;font-style:italic;margin-bottom:16px;">Schedule &amp; pricing: to be announced.</div>
+            <button data-page="available-classes" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#FF6B1A;font-weight:700;font-size:13.5px;padding:9px 16px;border:1.5px solid #FF6B1A;border-radius:6px;">I'm Interested →</button>
           </div>
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:26px;background:#fff;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:21px;margin:0 0 8px;letter-spacing:-0.5px;">Build &amp; Take Home Your Own 3D Printer</h3>
-            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 12&ndash;18 · ADVANCED / MULTI-SESSION</div>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 14px;">The deep-dive version. Students build a 3D printer from a kit &mdash; learning the mechanics, how to calibrate it, and how to troubleshoot common issues.</p>
+            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 12–18 · ADVANCED / MULTI-SESSION</div>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 14px;">The deep-dive version. Students build a 3D printer from a kit — learning the mechanics, how to calibrate it, and how to troubleshoot common issues.</p>
             <div style="background:#fff7f2;border-radius:7px;padding:12px 14px;font-size:14px;color:#9a4d1a;"><b>They take home:</b> Their own assembled and calibrated 3D printer.</div>
-            <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-              <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:14px;">
-                <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-                <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Premium multi-session class. Pricing and session count TBD &mdash; update once finalized.</span>
-              </div>
-            </sc-if>
+            <div style="margin-top:14px;margin-bottom:16px;font-size:13px;color:#8a8fa8;font-style:italic;">Schedule &amp; pricing: to be announced — includes a materials fee for the printer kit.</div>
+            <button data-page="available-classes" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#FF6B1A;font-weight:700;font-size:13.5px;padding:9px 16px;border:1.5px solid #FF6B1A;border-radius:6px;">I'm Interested →</button>
           </div>
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:26px;background:#fff;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:21px;margin:0 0 8px;letter-spacing:-0.5px;">AI Explorers</h3>
-            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 12&ndash;18</div>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 14px;">An introduction to artificial intelligence &mdash; how AI works, where it shows up in everyday life, and how to use AI tools responsibly and creatively. Hands-on projects included.</p>
-            <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-              <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;">
-                <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-                <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Class name and curriculum still in development. Placeholder copy &mdash; update before launch.</span>
-              </div>
-            </sc-if>
+            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 12–18</div>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 14px;">An introduction to artificial intelligence — how AI works, where it shows up in everyday life, and how to use AI tools responsibly and creatively. Hands-on projects included.</p>
+            <div style="margin-top:14px;margin-bottom:16px;font-size:13px;color:#8a8fa8;font-style:italic;">Schedule &amp; pricing: to be announced.</div>
+            <button data-page="available-classes" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#FF6B1A;font-weight:700;font-size:13.5px;padding:9px 16px;border:1.5px solid #FF6B1A;border-radius:6px;">I'm Interested →</button>
           </div>
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:26px;background:#fff;grid-column:span 2;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:21px;margin:0 0 8px;letter-spacing:-0.5px;">Coding Fundamentals</h3>
-            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 8&ndash;16 · BEGINNER</div>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0;max-width:760px;">The basics of coding through visual and text-based programming. Students build small projects and games while learning core logic, sequences, loops, and problem-solving.</p>
+            <div style="font-family:Consolas,monospace;font-size:11px;color:#FF6B1A;letter-spacing:1px;font-weight:700;margin-bottom:14px;">AGES 8–16 · BEGINNER</div>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 16px;max-width:760px;">The basics of coding through visual and text-based programming. Students build small projects and games while learning core logic, sequences, loops, and problem-solving.</p>
+            <div style="font-size:13px;color:#8a8fa8;font-style:italic;margin-bottom:16px;">Schedule &amp; pricing: to be announced.</div>
+            <button data-page="available-classes" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#FF6B1A;font-weight:700;font-size:13.5px;padding:9px 16px;border:1.5px solid #FF6B1A;border-radius:6px;">I'm Interested →</button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- TRANSITION: MAKERSPACE -> LABS & LEAGUES -->
+    <section style="background:#1A3EE8;color:#fff;padding:52px 0;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-80px;right:-40px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;">
+        <div style="max-width:680px;">
+          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2px;color:#FFCC00;text-transform:uppercase;font-weight:700;margin-bottom:12px;">From Class to Competition</div>
+          <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:26px;letter-spacing:-0.5px;line-height:1.2;margin:0 0 10px;">Built something here? Take it to the competition floor.</h2>
+          <p style="font-size:15.5px;line-height:1.6;color:#dfe5ff;margin:0;">Every skill you pick up in a Makerspace class — code, CAD, circuits — is also a skill our Labs &amp; Leagues teams compete with. When you're ready for more than a class, there's a team waiting.</p>
+        </div>
+        <button data-page="program-labs" onClick="{{ handleNav }}" style="cursor:pointer;flex-shrink:0;background:#FFCC00;color:#0A0C18;font-weight:700;font-size:15px;padding:14px 26px;border:none;border-radius:6px;white-space:nowrap;">Explore Labs &amp; Leagues →</button>
+      </div>
+    </section>
+
     <section style="background:#0A0C18;color:#fff;padding:60px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
         <div>
@@ -359,16 +439,23 @@
             <span style="background:#15182a;border:1px solid #262b45;border-radius:20px;padding:7px 14px;font-size:13px;">Instructor support</span>
           </div>
           <button style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:5px;">View the Makers Monday Schedule →</button>
-          <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;gap:10px;background:rgba(255,204,0,0.14);border:1px dashed #FFCC00;border-radius:6px;padding:10px 12px;margin-top:18px;max-width:520px;">
-              <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#0A0C18;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-              <span style="font-size:13px;color:#fff;line-height:1.5;">Add specific days/hours and reservation process before launch.</span>
-            </div>
-          </sc-if>
+          <div style="margin-top:18px;max-width:520px;font-size:13px;color:#8890ab;font-style:italic;">Days &amp; hours: to be announced.</div>
         </div>
         <div style="aspect-ratio:4/3.3;border-radius:12px;background:repeating-linear-gradient(135deg,#15182a,#15182a 14px,#181c30 14px,#181c30 28px);border:1px solid #262b45;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
           <span style="font-size:28px;">⚙️</span>
           <span style="font-family:Consolas,monospace;font-size:11px;color:#7B81A0;text-transform:uppercase;letter-spacing:1px;text-align:center;">Photo · open build session</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL ENROLLMENT CTA -->
+    <section style="background:#FF6B1A;color:#fff;padding:56px 0;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;padding:0 32px;">
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;line-height:1.1;margin:0 0 12px;">Ready to get your kid building?</h2>
+        <p style="font-size:16.5px;line-height:1.6;margin:0 0 26px;opacity:0.95;">Classes fill by session — reserve a spot before the next one starts.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button data-page="enroll" onClick="{{ handleNav }}" style="cursor:pointer;background:#0A0C18;color:#fff;font-weight:700;font-size:16px;padding:14px 28px;border:none;border-radius:6px;">Enroll Now</button>
+          <button data-page="available-classes" onClick="{{ handleNav }}" style="cursor:pointer;background:transparent;color:#fff;font-weight:700;font-size:16px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.6);border-radius:6px;">View Full Class Schedule</button>
         </div>
       </div>
     </section>
@@ -381,10 +468,11 @@
     <section style="background:#FFCC00;color:#0A0C18;padding:60px 0;position:relative;overflow:hidden;">
       <div style="position:absolute;top:-100px;right:-60px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,0.30);"></div>
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;position:relative;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:#7a6000;">PROGRAM // LABS &amp; LEAGUES</div>
-        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 16px;">eSTEAMED<br>Labs &amp; Leagues</h1>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;color:#7a6000;"><br></div>
+        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 16px;animation:fadeUp .6s ease both;">eSTEAMED<br>Labs &amp; Leagues</h1>
         <p style="font-size:21px;font-weight:700;margin:0 0 8px;">Learn it in the fall. Compete in the spring.</p>
-        <p style="font-size:17px;max-width:660px;line-height:1.55;margin:0;color:#3d3208;">Our seasonal STEAM competition program. In the fall, students build skills through structured labs. In the spring, they join competition teams and represent eSTEAMED on the regional stage.</p>
+        <p style="font-size:17px;max-width:660px;line-height:1.55;margin:0 0 26px;color:#3d3208;">Our seasonal STEAM competition program. In the fall, students build skills through structured labs. In the spring, they join competition teams and represent eSTEAMED on the regional stage.</p>
+        <button data-page="enroll" onClick="{{ handleNav }}" style="cursor:pointer;background:#0A0C18;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:5px;">Register Interest →</button>
       </div>
     </section>
     <section style="background:#fff;padding:60px 0;">
@@ -392,29 +480,29 @@
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;">
           <span style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2px;color:#C99E00;font-weight:700;background:#fff7d6;padding:5px 12px;border-radius:5px;">FALL SEASON · 16 WEEKS</span>
         </div>
-        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;margin:12px 0 8px;">Fall &mdash; Labs (Classes)</h2>
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;margin:12px 0 8px;">Fall — Labs (Classes)</h2>
         <p style="font-size:16px;color:#56607a;line-height:1.55;max-width:720px;margin:0 0 32px;">Our fall program runs 16 weeks to give students a strong foundation before competition season. Labs cover the skills, teamwork, and strategy that drive competition success.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:24px;border-top:4px solid #FFCC00;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">Battlebots Robotics Labs</h3>
-            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0 0 14px;">Students design, build, and program combat robots using the VEX platform &mdash; learning engineering principles, strategy, and iterative design.</p>
+            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0 0 14px;">Students design, build, and program combat robots using the VEX platform — learning engineering principles, strategy, and iterative design.</p>
             <div style="display:flex;flex-wrap:wrap;gap:7px;">
-              <span style="font-family:Consolas,monospace;font-size:11px;background:#f3f4fa;border-radius:4px;padding:5px 9px;color:#1A1D30;">VEX GO · K&ndash;3</span>
-              <span style="font-family:Consolas,monospace;font-size:11px;background:#f3f4fa;border-radius:4px;padding:5px 9px;color:#1A1D30;">VEX IQ · 4&ndash;8</span>
-              <span style="font-family:Consolas,monospace;font-size:11px;background:#f3f4fa;border-radius:4px;padding:5px 9px;color:#1A1D30;">VEX 5 · 9&ndash;12</span>
+              <span style="font-family:Consolas,monospace;font-size:11px;background:#f3f4fa;border-radius:4px;padding:5px 9px;color:#1A1D30;">VEX GO · K–3</span>
+              <span style="font-family:Consolas,monospace;font-size:11px;background:#f3f4fa;border-radius:4px;padding:5px 9px;color:#1A1D30;">VEX IQ · 4–8</span>
+              <span style="font-family:Consolas,monospace;font-size:11px;background:#f3f4fa;border-radius:4px;padding:5px 9px;color:#1A1D30;">VEX 5 · 9–12</span>
             </div>
           </div>
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:24px;border-top:4px solid #FFCC00;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">FIRST Lego League</h3>
-            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">Teams work on a research project and build and program a robot to complete missions on a themed field &mdash; developing collaboration, problem-solving, and presentation skills.</p>
+            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">Teams work on a research project and build and program a robot to complete missions on a themed field — developing collaboration, problem-solving, and presentation skills.</p>
           </div>
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:24px;border-top:4px solid #FFCC00;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">iRacing League</h3>
-            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">Introduces students to sim racing and motorsport technology &mdash; race strategy, vehicle setup basics, and sportsmanship in a competitive eSports environment.</p>
+            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">Introduces students to sim racing and motorsport technology — race strategy, vehicle setup basics, and sportsmanship in a competitive eSports environment.</p>
           </div>
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:24px;border-top:4px solid #FFCC00;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">Get STEAMED League</h3>
-            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">A cross-disciplinary lab combining science, technology, engineering, art, and math into team-based competitions &mdash; for students who want to compete but haven't found their specialty yet.</p>
+            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">A cross-disciplinary lab combining science, technology, engineering, art, and math into team-based competitions — for students who want to compete but haven't found their specialty yet.</p>
           </div>
           <div style="border:1px solid #e6e9f4;border-radius:12px;padding:24px;border-top:4px solid #FFCC00;grid-column:span 2;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">eSports Leagues</h3>
@@ -426,7 +514,7 @@
     <section style="background:#F3F4FA;padding:60px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <span style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2px;color:#1A3EE8;font-weight:700;background:#e8edff;padding:5px 12px;border-radius:5px;">SPRING SEASON · STARTS MAY</span>
-        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;margin:14px 0 8px;">Spring &mdash; Competition Teams</h2>
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;margin:14px 0 8px;">Spring — Competition Teams</h2>
         <p style="font-size:16px;color:#56607a;line-height:1.55;max-width:720px;margin:0 0 30px;">Starting in May, eSTEAMED launches official competition teams. Students who completed the fall lab season are eligible to join a team and compete in regional events.</p>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px;">
           <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #e6e9f4;">
@@ -434,23 +522,18 @@
             <div style="font-weight:700;font-size:15.5px;">Team formation begins</div>
           </div>
           <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #e6e9f4;">
-            <div style="font-family:Consolas,monospace;font-size:12px;color:#1A3EE8;font-weight:700;margin-bottom:8px;">MAY&ndash;JUNE</div>
+            <div style="font-family:Consolas,monospace;font-size:12px;color:#1A3EE8;font-weight:700;margin-bottom:8px;">MAY–JUNE</div>
             <div style="font-weight:700;font-size:15.5px;">Training, strategy &amp; practice matches</div>
           </div>
           <div style="background:#fff;border-radius:10px;padding:22px;border:1px solid #e6e9f4;">
-            <div style="font-family:Consolas,monospace;font-size:12px;color:#1A3EE8;font-weight:700;margin-bottom:8px;">LATE SPRING&ndash;SUMMER</div>
+            <div style="font-family:Consolas,monospace;font-size:12px;color:#1A3EE8;font-weight:700;margin-bottom:8px;">LATE SPRING–SUMMER</div>
             <div style="font-weight:700;font-size:15.5px;">Regional competition events</div>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid #e6e9f4;border-radius:10px;padding:20px 22px;font-size:15px;color:#56607a;line-height:1.55;"><b style="color:#0A0C18;">Team eligibility:</b> Preference is given to students who completed the 16-week fall lab session. New students may be accepted based on availability &mdash; contact us to learn more.</div>
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:16px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-            <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Add specific competition dates, registration deadlines, and event locations once the spring 2027 calendar is confirmed.</span>
-          </div>
-        </sc-if>
+        <div style="background:#fff;border:1px solid #e6e9f4;border-radius:10px;padding:20px 22px;font-size:15px;color:#56607a;line-height:1.55;"><b style="color:#0A0C18;">Team eligibility:</b> Preference is given to students who completed the 16-week fall lab session. New students may be accepted based on availability — contact us to learn more.</div>
+        <div style="margin-top:16px;font-size:13.5px;color:#7B8091;font-style:italic;">Specific competition dates, registration deadlines, and event locations will be announced closer to the season.</div>
         <div style="display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;">
-          <button data-page="enroll" onClick="{{ handleNav }}" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:5px;">Register for Fall Labs →</button>
+          <button data-page="available-classes" onClick="{{ handleNav }}" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:5px;">Register for Fall Labs →</button>
           <button style="cursor:pointer;background:#fff;color:#1A3EE8;font-weight:700;font-size:15px;padding:13px 24px;border:1.5px solid #1A3EE8;border-radius:5px;">Learn About Spring Teams →</button>
         </div>
       </div>
@@ -464,10 +547,11 @@
     <section style="background:#1A3EE8;color:#fff;padding:60px 0;position:relative;overflow:hidden;">
       <div style="position:absolute;top:-100px;right:-60px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,0.10);"></div>
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;position:relative;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:0.85;">PROGRAM // EXPANDED LEARNING</div>
-        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 16px;">eSTEAMED<br>Expanded Learning</h1>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:0.85;"><br></div>
+        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 16px;animation:fadeUp .6s ease both;">eSTEAMED<br>Expanded Learning</h1>
         <p style="font-size:21px;font-weight:700;margin:0 0 8px;">We bring STEAM to your school.</p>
-        <p style="font-size:17px;max-width:680px;line-height:1.55;margin:0;opacity:0.95;">Our school partnership program &mdash; for districts, charter schools, and after-school providers who want high-quality STEAM enrichment directly at their sites. We are a licensed Expanded Learning Opportunity Program (ELOP) provider serving school districts across the Sacramento region.</p>
+        <p style="font-size:17px;max-width:680px;line-height:1.55;margin:0 0 26px;opacity:0.95;">Our school partnership program — for districts, charter schools, and after-school providers who want high-quality STEAM enrichment directly at their sites. We are a licensed Expanded Learning Opportunity Program (ELOP) provider serving school districts across the Sacramento region.</p>
+        <button data-page="schools" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#1A3EE8;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:5px;">I'm Interested →</button>
       </div>
     </section>
     <section style="background:#fff;padding:56px 0;">
@@ -489,41 +573,36 @@
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
           <div style="background:#fff;border-radius:12px;padding:26px;border:1px solid #e6e9f4;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">STEM Enrichment</h3>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0;">Hands-on STEM aligned to California standards &mdash; coding, robotics, engineering challenges, and maker projects. We bring materials, instructors, and curriculum.</p>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0;">Hands-on STEM aligned to California standards — coding, robotics, engineering challenges, and maker projects. We bring materials, instructors, and curriculum.</p>
           </div>
           <div style="background:#fff;border-radius:12px;padding:26px;border:1px solid #e6e9f4;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">eSports Program</h3>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0;">A structured, team-based gaming experience with real coaching, strategy instruction, and competitive play &mdash; designed to engage a broader range of learners.</p>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0;">A structured, team-based gaming experience with real coaching, strategy instruction, and competitive play — designed to engage a broader range of learners.</p>
           </div>
           <div style="background:#fff;border-radius:12px;padding:26px;border:1px solid #e6e9f4;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">Youth Development</h3>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0;">Leadership, goal-setting, social-emotional learning, and career awareness. Our instructors are trained to build community &mdash; not just content.</p>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0;">Leadership, goal-setting, social-emotional learning, and career awareness. Our instructors are trained to build community — not just content.</p>
           </div>
         </div>
         <div style="background:#0A0C18;color:#fff;border-radius:12px;padding:28px;margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
           <div>
             <div style="display:inline-block;font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;background:#FFCC00;color:#0A0C18;padding:4px 10px;border-radius:4px;font-weight:700;margin-bottom:12px;">COMING SOON</div>
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:22px;margin:0 0 8px;">Legacy Program</h3>
-            <p style="font-size:15px;color:#B8BCCE;line-height:1.55;margin:0;max-width:620px;">Our flagship long-term student development track &mdash; designed to take students from first exposure to career-ready skills across multiple school years.</p>
+            <p style="font-size:15px;color:#B8BCCE;line-height:1.55;margin:0;max-width:620px;">Our flagship long-term student development track — designed to take students from first exposure to career-ready skills across multiple school years.</p>
           </div>
         </div>
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:16px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-            <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Legacy Program name and curriculum in development. Update this section once finalized.</span>
-          </div>
-        </sc-if>
+
       </div>
     </section>
     <section style="background:#fff;padding:56px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 8px;">For Schools &mdash; How to Partner</h2>
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 8px;">For Schools — How to Partner</h2>
         <p style="font-size:16px;color:#56607a;line-height:1.55;max-width:700px;margin:0 0 30px;">We work with site coordinators, program directors, and district administrators to customize programming that fits your schedule, budget, and student population.</p>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;">
           <div style="border:1px solid #e6e9f4;border-radius:10px;padding:22px;"><div style="font-family:'Arial Black',Arial,sans-serif;font-size:26px;color:#1A3EE8;margin-bottom:8px;">01</div><div style="font-size:14.5px;color:#1A1D30;font-weight:600;line-height:1.4;">Submit an inquiry through our For Schools page</div></div>
           <div style="border:1px solid #e6e9f4;border-radius:10px;padding:22px;"><div style="font-family:'Arial Black',Arial,sans-serif;font-size:26px;color:#1A3EE8;margin-bottom:8px;">02</div><div style="font-size:14.5px;color:#1A1D30;font-weight:600;line-height:1.4;">Schedule a program consultation with our team</div></div>
           <div style="border:1px solid #e6e9f4;border-radius:10px;padding:22px;"><div style="font-family:'Arial Black',Arial,sans-serif;font-size:26px;color:#1A3EE8;margin-bottom:8px;">03</div><div style="font-size:14.5px;color:#1A1D30;font-weight:600;line-height:1.4;">Review our Supplemental Enrichment Catalog</div></div>
-          <div style="border:1px solid #e6e9f4;border-radius:10px;padding:22px;"><div style="font-family:'Arial Black',Arial,sans-serif;font-size:26px;color:#1A3EE8;margin-bottom:8px;">04</div><div style="font-size:14.5px;color:#1A1D30;font-weight:600;line-height:1.4;">Sign a service agreement &mdash; we handle the rest</div></div>
+          <div style="border:1px solid #e6e9f4;border-radius:10px;padding:22px;"><div style="font-family:'Arial Black',Arial,sans-serif;font-size:26px;color:#1A3EE8;margin-bottom:8px;">04</div><div style="font-size:14.5px;color:#1A1D30;font-weight:600;line-height:1.4;">Sign a service agreement — we handle the rest</div></div>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <button data-page="schools" onClick="{{ handleNav }}" style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:5px;">Request a Program Consultation →</button>
@@ -539,18 +618,18 @@
   <div>
     <section style="background:#0A0C18;color:#fff;padding:64px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">// About eSTEAMED</div>
-        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:50px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 20px;max-width:880px;">Building the next generation of makers, engineers, coders, and innovators.</h1>
-        <p style="font-size:18px;color:#B8BCCE;max-width:680px;line-height:1.6;margin:0;">eSTEAMED Academy is a Sacramento-based STEAM education company serving youth ages 5&ndash;19 through hands-on classes, competitive robotics, and expanded learning partnerships with school districts across the Capital Region.</p>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">WHO WE ARE</div>
+        <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:50px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 20px;max-width:880px;animation:fadeUp .6s ease both;">Building the next generation of builders.</h1>
+        <p style="font-size:18px;color:#B8BCCE;max-width:680px;line-height:1.6;margin:0;animation:fadeUp .6s ease .1s both;">eSTEAMED Academy is a Sacramento-region STEAM education company serving youth ages 5–19. We run hands-on enrichment classes, competitive robotics and esports leagues, and school-based expanded learning programs — all built on one idea: kids learn best when curiosity has somewhere to go.</p>
       </div>
     </section>
     <section style="background:#fff;padding:60px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
         <div>
-          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:14px;">// Company Overview</div>
+          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:14px;">COMPANY OVERVIEW</div>
           <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;margin:0 0 18px;">About eSTEAMED Academy, LLC</h2>
-          <p style="font-size:16.5px;color:#56607a;line-height:1.65;margin:0 0 16px;">eSTEAMED Academy is dedicated to building the next generation of makers, engineers, coders, and innovators. We serve youth ages 5&ndash;19 through hands-on classes, competitive robotics programs, and expanded learning partnerships with school districts across the Capital Region.</p>
-          <p style="font-size:16.5px;color:#56607a;line-height:1.65;margin:0;">From our makerspace at 4625 44th Street to after-school programs in classrooms across Sacramento, eSTEAMED brings real-world STEAM skills to young people who are ready to build something that matters.</p>
+          <p style="font-size:16.5px;color:#56607a;line-height:1.65;margin:0 0 16px;">eSTEAMED Academy is a Sacramento-region STEAM education company serving youth ages 5–19. We run hands-on enrichment classes, competitive robotics and esports leagues, and school-based expanded learning programs across the Capital Region.</p>
+          <p style="font-size:16.5px;color:#56607a;line-height:1.65;margin:0;">We believe STEM shouldn't feel like homework. It should feel like a team you make the cut for, a build you can't wait to finish, and a season you're counting down to — the same principle that makes youth sports so powerful, applied to STEAM.</p>
         </div>
         <div style="aspect-ratio:4/3.3;border-radius:12px;background:repeating-linear-gradient(135deg,#eef0f7,#eef0f7 14px,#e6e9f4 14px,#e6e9f4 28px);border:1px solid #d8dcea;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
           <span style="font-size:28px;">👩‍🔬</span>
@@ -559,10 +638,40 @@
       </div>
     </section>
     <section style="background:#F3F4FA;padding:56px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:12px;">WHAT WE DO</div>
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 30px;">Three programs. One mission.</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+          <div data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;border-radius:12px;border:1px solid #e6e9f4;overflow:hidden;">
+            <div style="height:5px;background:#FF6B1A;"></div>
+            <div style="padding:24px;">
+              <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">eSTEAMED Academy &amp; Makerspace</h3>
+              <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">Our in-person home base. Weekly enrichment classes in coding, game development, 3D printing, and AI, plus open Makers Mondays sessions.</p>
+            </div>
+          </div>
+          <div data-page="program-labs" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;border-radius:12px;border:1px solid #e6e9f4;overflow:hidden;">
+            <div style="height:5px;background:#FFCC00;"></div>
+            <div style="padding:24px;">
+              <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">eSTEAMED Labs &amp; Leagues</h3>
+              <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">Our competitive track. Seasonal robotics and esports teams — including VEX IQ robotics and our proprietary STEAM Challenge League.</p>
+            </div>
+          </div>
+          <div data-page="program-expanded" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;border-radius:12px;border:1px solid #e6e9f4;overflow:hidden;">
+            <div style="height:5px;background:#1A3EE8;"></div>
+            <div style="padding:24px;">
+              <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 10px;">eSTEAMED Expanded Learning Academy</h3>
+              <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0;">Our school partnership arm. We bring STEM enrichment, youth development, and esports programming into afterschool programs at partner districts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style="background:#fff;padding:56px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
         <div style="background:#1A3EE8;color:#fff;border-radius:14px;padding:36px;">
-          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2px;opacity:0.8;margin-bottom:14px;">OUR MISSION</div>
-          <p style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:24px;line-height:1.25;letter-spacing:-0.5px;margin:0;">To make STEAM education accessible, hands-on, and relevant &mdash; for every kid, in every community.</p>
+          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2px;opacity:0.8;margin-bottom:14px;">OUR WHY</div>
+          <p style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:24px;line-height:1.25;letter-spacing:-0.5px;margin:0 0 12px;">Where curiosity meets competition.</p>
+          <p style="font-size:15px;line-height:1.55;margin:0;opacity:0.92;">Our mission is simple: make STEM participation as common — and as exciting — as youth soccer. Every class, team, and league we run turns curiosity into confidence, and confidence into competition-ready skill.</p>
         </div>
         <div style="background:#0A0C18;color:#fff;border-radius:14px;padding:36px;">
           <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2px;color:#FFCC00;margin-bottom:14px;">OUR VISION</div>
@@ -572,7 +681,7 @@
     </section>
     <section style="background:#fff;padding:60px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#FF6B1A;text-transform:uppercase;font-weight:700;margin-bottom:14px;">// Why eSTEAMED</div>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#FF6B1A;text-transform:uppercase;font-weight:700;margin-bottom:14px;">WHY ESTEAMED</div>
         <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;margin:0 0 14px;max-width:760px;line-height:1.1;">There's no shortage of kids who love technology. There's a shortage of programs that meet them where they are.</h2>
         <p style="font-size:16.5px;color:#56607a;line-height:1.6;max-width:680px;margin:0 0 34px;">eSTEAMED was built for that gap. Here's what sets us apart.</p>
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px;">
@@ -584,33 +693,72 @@
         </div>
       </div>
     </section>
-    <section style="background:#F3F4FA;padding:56px 0;">
+    <section style="background:#F3F4FA;padding:60px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-bottom:22px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">MERGE NOTE</span>
-            <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Locations and Programs overview merged into the About page as sections (per sitemap). Add map embeds and hours of operation once confirmed.</span>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#FF6B1A;text-transform:uppercase;font-weight:700;margin-bottom:14px;">WHAT MAKES US DIFFERENT</div>
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 30px;max-width:760px;">We're not a class. We're a league.</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+          <div style="background:#fff;border-radius:12px;padding:28px;border:1px solid #e6e9f4;">
+            <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#1A3EE8;font-weight:700;margin-bottom:12px;">THE LABS-TO-LEAGUES PATHWAY</div>
+            <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0;">Most enrichment programs stop at the class. We don't. Kids start in a Makerspace class or Lab, build real skill, and then have somewhere to take it — a robotics team, an esports roster, or our own STEAM Challenge League. Practice has a purpose.</p>
           </div>
-        </sc-if>
-        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 24px;">Our Locations</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-          <div style="background:#fff;border:1px solid #e6e9f4;border-radius:12px;padding:26px;border-top:4px solid #FF6B1A;">
-            <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 8px;">eSTEAMED Academy &amp; Maker Space</h3>
-            <div style="font-size:15px;color:#1A1D30;margin-bottom:6px;">4625 44th Street, Suite 9 — Sacramento, CA 95820</div>
-            <p style="font-size:14.5px;color:#56607a;line-height:1.5;margin:0;">Home of our makerspace, classes, and drop-in build sessions. Open Maker Space days available &mdash; check schedule for hours.</p>
+          <div style="background:#fff;border-radius:12px;padding:28px;border:1px solid #e6e9f4;">
+            <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#FF6B1A;font-weight:700;margin-bottom:12px;">THE STEAM CHALLENGE LEAGUE</div>
+            <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0;">Our proprietary eSTEAMED STEAM Challenge League blends escape-room puzzles, engineering builds, and academic-decathlon-style challenges into one competitive format — nothing else like it in the region.</p>
           </div>
-          <div style="background:#fff;border:1px solid #e6e9f4;border-radius:12px;padding:26px;border-top:4px solid #1A3EE8;">
-            <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 8px;">eSTEAMED Expanded Learning Hub</h3>
-            <div style="font-size:15px;color:#1A1D30;margin-bottom:6px;">1150 Eastern Avenue — Sacramento, CA</div>
-            <p style="font-size:14.5px;color:#56607a;line-height:1.5;margin:0;">Administrative and program coordination office.</p>
+          <div style="background:#fff;border-radius:12px;padding:28px;border:1px solid #e6e9f4;">
+            <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#C99E00;font-weight:700;margin-bottom:12px;">ONE PATHWAY, AGES 5–19</div>
+            <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0;">Most programs age out at 12. We don't. eSTEAMED is a long runway — from a first Makers Monday session in elementary school, through VEX IQ and VEX V5 robotics, to leadership roles coaching younger teams.</p>
           </div>
+          <div style="background:#fff;border-radius:12px;padding:28px;border:1px solid #e6e9f4;">
+            <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#1A3EE8;font-weight:700;margin-bottom:12px;">ROOTED IN SACRAMENTO</div>
+            <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0;">We're not a national franchise running the same script in every city. eSTEAMED is built in and for the Sacramento region — with a physical studio kids can walk into, and direct partnerships with local school districts.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <button data-page="programs" onClick="{{ handleNav }}" style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:none;border-radius:6px;">Explore Our Programs →</button>
+          <button data-page="enroll" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#1A3EE8;font-weight:700;font-size:16px;padding:14px 26px;border:1.5px solid #1A3EE8;border-radius:6px;">Enroll Now →</button>
+        </div>
+      </div>
+    </section>
+    <section style="background:#fff;padding:60px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:14px;">FIND US</div>
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 8px;">Two studios. One Sacramento home base.</h2>
+        <p style="font-size:16px;color:#56607a;line-height:1.55;max-width:680px;margin:0 0 30px;">eSTEAMED Academy operates out of two locations in the Sacramento/Carmichael area — come build with us at either one.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;">
+          <div style="background:#fff;border:1px solid #e6e9f4;border-radius:12px;overflow:hidden;">
+            <div style="height:4px;background:#FF6B1A;"></div>
+            <div style="padding:26px;">
+              <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 8px;">eSTEAMED Academy &amp; Maker Space</h3>
+              <div style="font-size:15px;color:#1A1D30;margin-bottom:10px;">4625 44th Street, Suite 9 — Sacramento, CA 95820</div>
+              <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0 0 14px;">Our flagship makerspace and program hub. This is where most in-person classes, Makers Mondays, and Labs sessions run.</p>
+              <div style="font-size:13px;color:#8a8fa8;font-style:italic;margin-bottom:16px;">Hours &amp; parking/drop-off details: to be announced.</div>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=4625+44th+Street+Suite+9,+Sacramento,+CA+95820" target="_blank" rel="noopener" style="cursor:pointer;color:#FF6B1A;font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:6px;">Get Directions →</a>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid #e6e9f4;border-radius:12px;overflow:hidden;">
+            <div style="height:4px;background:#1A3EE8;"></div>
+            <div style="padding:26px;">
+              <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:19px;margin:0 0 8px;">eSTEAMED Expanded Learning Hub</h3>
+              <div style="font-size:15px;color:#1A1D30;margin-bottom:10px;">1150 Eastern Avenue — Sacramento, CA</div>
+              <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0 0 14px;">Program coordination office, with additional classroom and administrative space.</p>
+              <div style="font-size:13px;color:#8a8fa8;font-style:italic;margin-bottom:16px;">Hours &amp; parking/drop-off details: to be announced.</div>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1150+Eastern+Avenue,+Sacramento,+CA" target="_blank" rel="noopener" style="cursor:pointer;color:#1A3EE8;font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:6px;">Get Directions →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;">
+          <button data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:6px;">Find a Class Near You →</button>
+          <button data-page="enroll" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#1A3EE8;font-weight:700;font-size:15px;padding:13px 24px;border:1.5px solid #1A3EE8;border-radius:6px;">Enroll Now →</button>
         </div>
       </div>
     </section>
     <section style="background:#fff;padding:56px 0 64px;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 8px;">Our Programs</h2>
-        <p style="font-size:16px;color:#56607a;line-height:1.55;max-width:680px;margin:0 0 26px;">Three distinct program tracks &mdash; each designed to meet youth where they are and take them further.</p>
+        <p style="font-size:16px;color:#56607a;line-height:1.55;max-width:680px;margin:0 0 26px;">Three distinct program tracks — each designed to meet youth where they are and take them further.</p>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
           <div data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;border:1px solid #e6e9f4;border-radius:12px;padding:24px;border-left:5px solid #FF6B1A;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:18px;margin:0 0 8px;line-height:1.15;">Academy &amp; Maker Space</h3>
@@ -630,6 +778,17 @@
         </div>
       </div>
     </section>
+    <section style="background:#0A0C18;color:#fff;padding:64px 0;text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:280px;background:radial-gradient(ellipse,rgba(26,62,232,0.22),transparent 70%);"></div>
+      <div style="max-width:680px;margin:0 auto;padding:0 32px;position:relative;">
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:34px;letter-spacing:-1px;line-height:1.1;margin:0 0 14px;">Ready to see it for yourself?</h2>
+        <p style="font-size:17px;color:#B8BCCE;margin:0 0 28px;">Whether it's 3D printing a first design, coding a first game, or gearing up for a robotics championship — this is where they build it.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <button data-page="programs" onClick="{{ handleNav }}" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:16px;padding:14px 28px;border:none;border-radius:6px;">Explore Our Programs</button>
+          <button data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;background:transparent;color:#fff;font-weight:700;font-size:16px;padding:14px 28px;border:1.5px solid #2c3350;border-radius:6px;">Find a Class Near You</button>
+        </div>
+      </div>
+    </section>
   </div>
   </sc-if>
 
@@ -639,9 +798,9 @@
     <section style="background:#0A0C18;color:#fff;padding:60px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;">
         <div>
-          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">// For Charter School Parents</div>
+          <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">FOR CHARTER SCHOOL PARENTS</div>
           <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:46px;letter-spacing:-1.5px;line-height:1.02;margin:0 0 18px;">Use your student's learning funds at eSTEAMED.</h1>
-          <p style="font-size:17px;color:#B8BCCE;line-height:1.6;margin:0;">If your child attends a charter school with a personal learning plan, you may be able to use education funds to enroll in eSTEAMED Academy programs &mdash; through your charter's vendor approval process or direct billing to your Education Spending Account (ESA).</p>
+          <p style="font-size:17px;color:#B8BCCE;line-height:1.6;margin:0;">If your child attends a charter school with a personal learning plan, you may be able to use education funds to enroll in eSTEAMED Academy programs — through your charter's vendor approval process or direct billing to your Education Spending Account (ESA).</p>
         </div>
         <div style="aspect-ratio:4/3.4;border-radius:12px;background:repeating-linear-gradient(135deg,#15182a,#15182a 14px,#181c30 14px,#181c30 28px);border:1px solid #262b45;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
           <span style="font-size:28px;">👨‍👩‍👧</span>
@@ -655,9 +814,9 @@
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
           <div style="display:flex;gap:12px;align-items:flex-start;border:1px solid #e6e9f4;border-radius:10px;padding:18px 20px;"><span style="color:#1A3EE8;font-size:18px;flex-shrink:0;">✓</span><span style="font-size:15px;color:#1A1D30;line-height:1.5;">Project-based learning that complements any learning plan</span></div>
           <div style="display:flex;gap:12px;align-items:flex-start;border:1px solid #e6e9f4;border-radius:10px;padding:18px 20px;"><span style="color:#1A3EE8;font-size:18px;flex-shrink:0;">✓</span><span style="font-size:15px;color:#1A1D30;line-height:1.5;">Classes aligned to STEAM and CTE education goals</span></div>
-          <div style="display:flex;gap:12px;align-items:flex-start;border:1px solid #e6e9f4;border-radius:10px;padding:18px 20px;"><span style="color:#1A3EE8;font-size:18px;flex-shrink:0;">✓</span><span style="font-size:15px;color:#1A1D30;line-height:1.5;">Flexible scheduling &mdash; morning, afternoon, and weekend options</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;border:1px solid #e6e9f4;border-radius:10px;padding:18px 20px;"><span style="color:#1A3EE8;font-size:18px;flex-shrink:0;">✓</span><span style="font-size:15px;color:#1A1D30;line-height:1.5;">Flexible scheduling — morning, afternoon, and weekend options</span></div>
           <div style="display:flex;gap:12px;align-items:flex-start;border:1px solid #e6e9f4;border-radius:10px;padding:18px 20px;"><span style="color:#1A3EE8;font-size:18px;flex-shrink:0;">✓</span><span style="font-size:15px;color:#1A1D30;line-height:1.5;">Experienced instructors with youth-centered education backgrounds</span></div>
-          <div style="display:flex;gap:12px;align-items:flex-start;border:1px solid #e6e9f4;border-radius:10px;padding:18px 20px;grid-column:span 2;"><span style="color:#1A3EE8;font-size:18px;flex-shrink:0;">✓</span><span style="font-size:15px;color:#1A1D30;line-height:1.5;">Located at 4625 44th Street &mdash; easy access for Sacramento-area families</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;border:1px solid #e6e9f4;border-radius:10px;padding:18px 20px;grid-column:span 2;"><span style="color:#1A3EE8;font-size:18px;flex-shrink:0;">✓</span><span style="font-size:15px;color:#1A1D30;line-height:1.5;">Located at 4625 44th Street — easy access for Sacramento-area families</span></div>
         </div>
       </div>
     </section>
@@ -667,12 +826,12 @@
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
           <div style="background:#fff;border-radius:12px;border:1px solid #e6e9f4;padding:28px;border-top:4px solid #FF6B1A;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:20px;margin:0 0 10px;">eSTEAMED Academy &amp; Maker Space</h3>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 16px;">Enroll in individual classes or a full session &mdash; game development, 3D printing, AI Explorers, and coding fundamentals. Open makerspace days also available.</p>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 16px;">Enroll in individual classes or a full session — game development, 3D printing, AI Explorers, and coding fundamentals. Open makerspace days also available.</p>
             <button data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;background:transparent;border:none;color:#FF6B1A;font-weight:700;font-size:15px;padding:0;">View Academy Class Schedule →</button>
           </div>
           <div style="background:#fff;border-radius:12px;border:1px solid #e6e9f4;padding:28px;border-top:4px solid #FFCC00;">
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:20px;margin:0 0 10px;">eSTEAMED Labs &amp; Leagues</h3>
-            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 16px;">Competition-ready robotics, eSports, iRacing, and STEAM leagues &mdash; with a clear path from fall labs to spring competition teams.</p>
+            <p style="font-size:15px;color:#56607a;line-height:1.55;margin:0 0 16px;">Competition-ready robotics, eSports, iRacing, and STEAM leagues — with a clear path from fall labs to spring competition teams.</p>
             <button data-page="program-labs" onClick="{{ handleNav }}" style="cursor:pointer;background:transparent;border:none;color:#C99E00;font-weight:700;font-size:15px;padding:0;">See This Season's League Schedule →</button>
           </div>
         </div>
@@ -682,12 +841,7 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 14px;">How to Enroll</h2>
         <p style="font-size:16px;color:#56607a;line-height:1.6;max-width:680px;margin:0 0 18px;">Ready to get started? Begin enrollment below, or contact us with questions about whether eSTEAMED is an approved vendor with your charter.</p>
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-bottom:24px;max-width:760px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-            <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Add charter vendor approval process details, ESA billing info, and list of accepted charters before launch.</span>
-          </div>
-        </sc-if>
+
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <button data-page="enroll" onClick="{{ handleNav }}" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:none;border-radius:5px;">Start Enrollment →</button>
           <button data-page="contact" onClick="{{ handleNav }}" style="cursor:pointer;background:#fff;color:#1A3EE8;font-weight:700;font-size:16px;padding:14px 26px;border:1.5px solid #1A3EE8;border-radius:5px;">Contact Us with Questions →</button>
@@ -703,9 +857,9 @@
     <section style="background:#1A3EE8;color:#fff;padding:64px 0;position:relative;overflow:hidden;">
       <div style="position:absolute;bottom:-120px;right:-60px;width:380px;height:380px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;position:relative;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:0.85;">// For Schools &amp; Districts</div>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:0.85;"><br></div>
         <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:56px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 16px;">STEAM Enrichment,<br>Delivered.</h1>
-        <p style="font-size:19px;font-weight:700;margin:0 0 10px;">We come to you &mdash; with curriculum, instructors, and everything in between.</p>
+        <p style="font-size:19px;font-weight:700;margin:0 0 10px;">We come to you — with curriculum, instructors, and everything in between.</p>
         <p style="font-size:16.5px;max-width:680px;line-height:1.6;margin:0;opacity:0.95;">eSTEAMED partners with schools and districts across the Sacramento region to deliver high-quality STEAM enrichment as part of expanded learning and after-school programs. We're an approved ELOP provider and we make partnership easy.</p>
       </div>
     </section>
@@ -717,7 +871,7 @@
           <div style="background:#F3F4FA;border-radius:10px;padding:24px;"><div style="font-weight:700;font-size:16px;margin-bottom:6px;color:#1A3EE8;">Flexible scheduling</div><div style="font-size:14.5px;color:#56607a;line-height:1.5;">Fits before-school, after-school, and in-school models.</div></div>
           <div style="background:#F3F4FA;border-radius:10px;padding:24px;"><div style="font-weight:700;font-size:16px;margin-bottom:6px;color:#1A3EE8;">Standards-aligned content</div><div style="font-size:14.5px;color:#56607a;line-height:1.5;">STEAM, CTE, and social-emotional learning.</div></div>
           <div style="background:#F3F4FA;border-radius:10px;padding:24px;"><div style="font-weight:700;font-size:16px;margin-bottom:6px;color:#1A3EE8;">Proven in Sacramento</div><div style="font-size:14.5px;color:#56607a;line-height:1.5;">We currently serve six school districts.</div></div>
-          <div style="background:#F3F4FA;border-radius:10px;padding:24px;grid-column:span 2;"><div style="font-weight:700;font-size:16px;margin-bottom:6px;color:#1A3EE8;">Youth development built in</div><div style="font-size:14.5px;color:#56607a;line-height:1.5;">Not just enrichment, but community &mdash; leadership, goal-setting, and career awareness.</div></div>
+          <div style="background:#F3F4FA;border-radius:10px;padding:24px;grid-column:span 2;"><div style="font-weight:700;font-size:16px;margin-bottom:6px;color:#1A3EE8;">Youth development built in</div><div style="font-size:14.5px;color:#56607a;line-height:1.5;">Not just enrichment, but community — leadership, goal-setting, and career awareness.</div></div>
         </div>
       </div>
     </section>
@@ -733,12 +887,63 @@
           <div style="background:#fff;border:1px solid #e6e9f4;border-radius:10px;padding:20px;display:flex;align-items:center;gap:12px;"><span style="font-family:Consolas,monospace;font-weight:700;color:#1A3EE8;background:#e8edff;padding:7px 9px;border-radius:5px;font-size:12px;">TRUSD</span><span style="font-size:14px;font-weight:600;color:#1A1D30;">Twin Rivers Unified</span></div>
           <div style="background:#fff;border:1px solid #e6e9f4;border-radius:10px;padding:20px;display:flex;align-items:center;gap:12px;"><span style="font-family:Consolas,monospace;font-weight:700;color:#1A3EE8;background:#e8edff;padding:7px 9px;border-radius:5px;font-size:12px;">NUSD</span><span style="font-size:14px;font-weight:600;color:#1A1D30;">Natomas Unified</span></div>
         </div>
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;max-width:760px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-            <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Add brief partnership success story or quote from a site coordinator before launch.</span>
+
+      </div>
+    </section>
+    <section id="partnership" style="background:#fff;padding:56px 0;border-top:1px solid #eef0f7;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:start;">
+        <div>
+          <div style="display:inline-block;font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;background:#e8edff;color:#1A3EE8;padding:5px 11px;border-radius:5px;font-weight:700;margin-bottom:16px;">PARTNERSHIP INQUIRY</div>
+          <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;line-height:1.05;margin:0 0 14px;">Bring eSTEAMED to your school.</h2>
+          <p style="font-size:16px;color:#56607a;line-height:1.6;margin:0 0 24px;max-width:420px;">Tell us about your site and what you're looking for. Our partnerships team will follow up to scope programming, scheduling, and ELOP funding.</p>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="font-family:'Arial Black',Arial,sans-serif;color:#1A3EE8;font-size:18px;flex-shrink:0;">1</span><div style="font-size:14.5px;color:#1A1D30;line-height:1.5;"><b>Submit this inquiry</b><br><span style="color:#56607a;">Takes about two minutes.</span></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="font-family:'Arial Black',Arial,sans-serif;color:#1A3EE8;font-size:18px;flex-shrink:0;">2</span><div style="font-size:14.5px;color:#1A1D30;line-height:1.5;"><b>Discovery call</b><br><span style="color:#56607a;">We learn your goals and constraints.</span></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><span style="font-family:'Arial Black',Arial,sans-serif;color:#1A3EE8;font-size:18px;flex-shrink:0;">3</span><div style="font-size:14.5px;color:#1A1D30;line-height:1.5;"><b>Custom proposal</b><br><span style="color:#56607a;">Programming, staffing, and pricing.</span></div></div>
           </div>
-        </sc-if>
+        </div>
+        <div style="background:#F3F4FA;border-radius:14px;padding:32px;">
+          <sc-if value="{{ sentPartnership }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;padding:44px 8px;">
+              <div style="width:64px;height:64px;border-radius:50%;background:#e6f7ec;color:#1a8a4f;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 18px;">✓</div>
+              <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:24px;letter-spacing:-0.5px;margin:0 0 10px;">Inquiry received!</h2>
+              <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0 0 22px;">Thanks — our partnerships team will reach out within 1–2 business days to set up a discovery call.</p>
+              <button data-form="partnership" onClick="{{ resetForm }}" style="cursor:pointer;background:#fff;border:1.5px solid #d8dcea;color:#1A1D30;font-weight:700;font-size:14px;padding:11px 22px;border-radius:6px;">Submit another inquiry</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ showPartnership }}" hint-placeholder-val="{{ true }}">
+          <form data-form="partnership" data-form-type="partnership" className="website-form" onSubmit="{{ submitForm }}" style="display:flex;flex-direction:column;gap:14px;">
+            <input type="text" name="hp_website" tabIndex="-1" autoComplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">School / District name</label><input type="text" name="school" required="required" placeholder="e.g. Elk Grove Unified" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Your name</label><input type="text" name="contact" required="required" placeholder="Full name" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Role / title</label><input type="text" name="title" required="required" placeholder="e.g. ELOP Coordinator" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Work email</label><input type="email" name="email" required="required" placeholder="you@district.org" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Phone</label><input type="tel" name="phone" placeholder="(916) 555-0123" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;"># of sites</label><input type="number" name="sites" min="1" placeholder="e.g. 3" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Est. students</label><input type="text" name="students" placeholder="e.g. 60–80" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+            </div>
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Program of interest</label>
+              <select name="program" required="required" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 12px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;">
+                <option value="" disabled="" selected="">Select one…</option>
+                <option>Expanded Learning (ELOP)</option>
+                <option>STEAM Enrichment</option>
+                <option>eSports Program</option>
+                <option>Multiple / not sure yet</option>
+              </select>
+            </div>
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Anything else we should know?</label><textarea name="message" placeholder="Goals, timelines, funding source, etc." style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;min-height:100px;padding:12px 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;resize:vertical;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></textarea></div>
+            <sc-if value="{{ partnershipError }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#fdecea;border:1px solid #f5c2c0;color:#b3261e;border-radius:7px;padding:12px 14px;font-size:14px;line-height:1.5;">Something went wrong sending your inquiry. Please try again, or reach us directly.</div>
+            </sc-if>
+            <button type="submit" disabled="{{ partnershipSubmitting }}" style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:15px;padding:14px 24px;border:none;border-radius:6px;margin-top:4px;opacity:{{ partnershipBtnOpacity }};">{{ partnershipSubmitLabel }}</button>
+          </form>
+          </sc-if>
+        </div>
       </div>
     </section>
     <section style="background:#0A0C18;color:#fff;padding:56px 0;">
@@ -746,16 +951,11 @@
         <div>
           <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2px;color:#FFCC00;margin-bottom:14px;">SUPPLEMENTAL ENRICHMENT CATALOG</div>
           <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:28px;letter-spacing:-0.5px;margin:0 0 14px;line-height:1.1;">Everything eSTEAMED offers for schools, in one catalog.</h2>
-          <p style="font-size:16px;color:#B8BCCE;line-height:1.6;margin:0 0 22px;max-width:540px;">Program descriptions, age ranges, equipment requirements, and session formats &mdash; download to plan your site's enrichment.</p>
-          <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;gap:10px;background:rgba(255,204,0,0.14);border:1px dashed #FFCC00;border-radius:6px;padding:10px 12px;margin-bottom:20px;max-width:540px;">
-              <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#0A0C18;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-              <span style="font-size:13px;color:#fff;line-height:1.5;">Create the catalog PDF before launch &mdash; this links to or embeds the downloadable file.</span>
-            </div>
-          </sc-if>
+          <p style="font-size:16px;color:#B8BCCE;line-height:1.6;margin:0 0 22px;max-width:540px;">Program descriptions, age ranges, equipment requirements, and session formats — download to plan your site's enrichment.</p>
+
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <button style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:5px;">Download the Catalog (PDF) →</button>
-            <button data-page="contact" onClick="{{ handleNav }}" style="cursor:pointer;background:transparent;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:1.5px solid #2c3350;border-radius:5px;">Request a Site Consultation →</button>
+            <a href="#partnership" style="cursor:pointer;background:transparent;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:1.5px solid #2c3350;border-radius:5px;display:inline-flex;align-items:center;">Request a Site Consultation →</a>
           </div>
         </div>
         <div style="aspect-ratio:3/3.6;border-radius:12px;background:repeating-linear-gradient(135deg,#15182a,#15182a 14px,#181c30 14px,#181c30 28px);border:1px solid #262b45;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
@@ -773,9 +973,9 @@
     <section style="background:#0A0C18;color:#fff;padding:64px 0;position:relative;overflow:hidden;">
       <div style="position:absolute;top:-100px;left:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,26,0.30),transparent 70%);"></div>
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;position:relative;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">// We're Hiring</div>
+        
         <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:58px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 18px;">Teach. <span style="color:#FF6B1A;">Build.</span> Inspire.</h1>
-        <p style="font-size:17px;color:#B8BCCE;line-height:1.6;max-width:680px;margin:0;">eSTEAMED is always looking for passionate educators and youth workers who want to do more than lead a class &mdash; we want people who want to build something with us. We hire for impact. If you love working with young people, know your craft, and believe hands-on learning changes lives, we want to hear from you.</p>
+        <p style="font-size:17px;color:#B8BCCE;line-height:1.6;max-width:680px;margin:0;">eSTEAMED is always looking for passionate educators and youth workers who want to do more than lead a class — we want people who want to build something with us. We hire for impact. If you love working with young people, know your craft, and believe hands-on learning changes lives, we want to hear from you.</p>
       </div>
     </section>
     <section style="background:#fff;padding:56px 0 64px;">
@@ -791,12 +991,12 @@
                 <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:23px;margin:0 0 8px;">STEAM Instructor</h3>
                 <div style="font-family:Consolas,monospace;font-size:12px;color:#56607a;letter-spacing:0.5px;">PART-TIME / CONTRACT · IN-PERSON · SACRAMENTO, CA</div>
               </div>
-              <button style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border:none;border-radius:5px;white-space:nowrap;">Apply for Instructor →</button>
+              <a href="#apply" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border:none;border-radius:5px;white-space:nowrap;display:inline-flex;align-items:center;">Apply for Instructor →</a>
             </div>
-            <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0 0 18px;max-width:820px;">eSTEAMED Instructors deliver hands-on STEAM classes and makerspace sessions for youth ages 5&ndash;19. You'll teach subjects from game development and 3D printing to robotics and coding, depending on your skills and our scheduling needs.</p>
+            <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0 0 18px;max-width:820px;">eSTEAMED Instructors deliver hands-on STEAM classes and makerspace sessions for youth ages 5–19. You'll teach subjects from game development and 3D printing to robotics and coding, depending on your skills and our scheduling needs.</p>
             <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1px;color:#FF6B1A;font-weight:700;margin-bottom:12px;">WE'RE LOOKING FOR</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-              <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#FF6B1A;">•</span> Experience working with youth (ages 5&ndash;19)</div>
+              <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#FF6B1A;">•</span> Experience working with youth (ages 5–19)</div>
               <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#FF6B1A;">•</span> Skills in coding, game dev, 3D printing/design, robotics, or electronics</div>
               <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#FF6B1A;">•</span> Ability to manage a classroom and keep students engaged</div>
               <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#FF6B1A;">•</span> Flexibility to work across makerspace and school-site locations</div>
@@ -809,25 +1009,75 @@
                 <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:23px;margin:0 0 8px;">Site Coordinator</h3>
                 <div style="font-family:Consolas,monospace;font-size:12px;color:#56607a;letter-spacing:0.5px;">PART-TIME / CONTRACT · IN-PERSON · SACRAMENTO, CA</div>
               </div>
-              <button style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border:none;border-radius:5px;white-space:nowrap;">Apply for Site Coordinator →</button>
+              <a href="#apply" style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border:none;border-radius:5px;white-space:nowrap;display:inline-flex;align-items:center;">Apply for Site Coordinator →</a>
             </div>
-            <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0 0 18px;max-width:820px;">eSTEAMED Site Coordinators are the on-the-ground leads for our school-based expanded learning programs. You'll handle daily operations at your assigned site &mdash; managing attendance, supporting instructors, communicating with school staff, and ensuring a safe, productive experience.</p>
+            <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0 0 18px;max-width:820px;">eSTEAMED Site Coordinators are the on-the-ground leads for our school-based expanded learning programs. You'll handle daily operations at your assigned site — managing attendance, supporting instructors, communicating with school staff, and ensuring a safe, productive experience.</p>
             <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1px;color:#1A3EE8;font-weight:700;margin-bottom:12px;">WE'RE LOOKING FOR</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
               <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#1A3EE8;">•</span> Prior experience in a youth program, school, or community org</div>
               <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#1A3EE8;">•</span> Strong communication and organizational skills</div>
               <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#1A3EE8;">•</span> Comfortable managing logistics and people simultaneously</div>
-              <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#1A3EE8;">•</span> Background check required &mdash; must meet school site clearance</div>
+              <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;"><span style="color:#1A3EE8;">•</span> Background check required — must meet school site clearance</div>
               <div style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#1A1D30;grid-column:span 2;"><span style="color:#1A3EE8;">•</span> Bilingual (English/Spanish) a plus</div>
             </div>
           </div>
         </div>
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:22px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-            <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Add application form or embed once hiring platform is confirmed. Evergreen = always accepting, reviewed on a rolling basis.</span>
-          </div>
-        </sc-if>
+
+      </div>
+    </section>
+    <section id="apply" style="background:#F3F4FA;padding:60px 0;">
+      <div style="max-width:820px;margin:0 auto;padding:0 32px;">
+        
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;line-height:1.05;margin:0 0 10px;">Apply to join the team.</h2>
+        <p style="font-size:16px;color:#56607a;line-height:1.6;margin:0 0 28px;max-width:620px;">One application covers all open roles. Tell us about you and what you'd love to teach — we review applications on a rolling basis.</p>
+        <div style="background:#fff;border:1px solid #e6e9f4;border-radius:14px;padding:34px;">
+          <sc-if value="{{ sentInstructor }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;padding:44px 8px;">
+              <div style="width:64px;height:64px;border-radius:50%;background:#e6f7ec;color:#1a8a4f;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 18px;">✓</div>
+              <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:24px;letter-spacing:-0.5px;margin:0 0 10px;">Application submitted!</h2>
+              <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0 0 22px;max-width:440px;margin-left:auto;margin-right:auto;">Thanks for your interest in eSTEAMED. We review applications on a rolling basis and will be in touch if there's a fit.</p>
+              <button data-form="instructor" onClick="{{ resetForm }}" style="cursor:pointer;background:#fff;border:1.5px solid #d8dcea;color:#1A1D30;font-weight:700;font-size:14px;padding:11px 22px;border-radius:6px;">Submit another application</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ showInstructor }}" hint-placeholder-val="{{ true }}">
+          <form data-form="instructor" data-form-type="instructor" className="website-form" onSubmit="{{ submitForm }}" style="display:flex;flex-direction:column;gap:16px;">
+            <input type="text" name="hp_website" tabIndex="-1" autoComplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Full name</label><input type="text" name="name" required="required" placeholder="Your full name" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#FF6B1A;box-shadow:0 0 0 3px rgba(255,107,26,0.14);outline:none;"></div>
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Role you're applying for</label>
+                <select name="position" required="required" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 12px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#FF6B1A;box-shadow:0 0 0 3px rgba(255,107,26,0.14);outline:none;">
+                  <option value="" disabled="" selected="">Select one…</option>
+                  <option>STEAM Instructor</option>
+                  <option>Site Coordinator</option>
+                  <option>Either / open to both</option>
+                </select>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Email</label><input type="email" name="email" required="required" placeholder="you@email.com" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#FF6B1A;box-shadow:0 0 0 3px rgba(255,107,26,0.14);outline:none;"></div>
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Phone</label><input type="tel" name="phone" required="required" placeholder="(916) 555-0123" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#FF6B1A;box-shadow:0 0 0 3px rgba(255,107,26,0.14);outline:none;"></div>
+            </div>
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Areas of expertise</label><input type="text" name="expertise" required="required" placeholder="e.g. coding, 3D printing, robotics, game dev" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#FF6B1A;box-shadow:0 0 0 3px rgba(255,107,26,0.14);outline:none;"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Experience with youth</label>
+                <select name="experience" required="required" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 12px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#FF6B1A;box-shadow:0 0 0 3px rgba(255,107,26,0.14);outline:none;">
+                  <option value="" disabled="" selected="">Select one…</option>
+                  <option>Less than 1 year</option>
+                  <option>1–3 years</option>
+                  <option>3–5 years</option>
+                  <option>5+ years</option>
+                </select>
+              </div>
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Resume / portfolio link</label><input type="url" name="resume" placeholder="https://…" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#FF6B1A;box-shadow:0 0 0 3px rgba(255,107,26,0.14);outline:none;"></div>
+            </div>
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Why do you want to teach with eSTEAMED?</label><textarea name="why" required="required" placeholder="Tell us a little about you and what draws you to hands-on STEAM education." style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;min-height:120px;padding:12px 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;resize:vertical;" style-focus="border-color:#FF6B1A;box-shadow:0 0 0 3px rgba(255,107,26,0.14);outline:none;"></textarea></div>
+            <sc-if value="{{ instructorError }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#fdecea;border:1px solid #f5c2c0;color:#b3261e;border-radius:7px;padding:12px 14px;font-size:14px;line-height:1.5;">Something went wrong sending your application. Please try again, or reach us directly.</div>
+            </sc-if>
+            <button type="submit" disabled="{{ instructorSubmitting }}" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:15px;padding:15px 24px;border:none;border-radius:6px;margin-top:4px;opacity:{{ instructorBtnOpacity }};">{{ instructorSubmitLabel }}</button>
+          </form>
+          </sc-if>
+        </div>
       </div>
     </section>
   </div>
@@ -838,7 +1088,7 @@
   <div>
     <section style="background:#0A0C18;color:#fff;padding:56px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">// Contact</div>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;"><br></div>
         <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:48px;letter-spacing:-1.5px;line-height:1.0;margin:0;">We'd love to hear from you.</h1>
       </div>
     </section>
@@ -851,37 +1101,50 @@
           <div style="display:flex;flex-direction:column;gap:12px;">
             <div style="border:1px solid #e6e9f4;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:center;"><span style="font-size:18px;">📨</span><div><div style="font-weight:700;font-size:14.5px;">Submit a support request</div><div style="font-size:13.5px;color:#56607a;">Through the form on this page</div></div></div>
             <div style="border:1px solid #e6e9f4;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:center;"><span style="font-size:18px;">✉️</span><div><div style="font-weight:700;font-size:14.5px;">Email us</div><div style="font-family:Consolas,monospace;font-size:13px;color:#1A3EE8;">support@esteamedacademy.com</div></div></div>
-            <div style="border:1px solid #e6e9f4;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:center;"><span style="font-size:18px;">⏱️</span><div><div style="font-weight:700;font-size:14.5px;">Response time</div><div style="font-size:13.5px;color:#56607a;">1&ndash;2 business days</div></div></div>
+            <div style="border:1px solid #e6e9f4;border-radius:10px;padding:16px 18px;display:flex;gap:12px;align-items:center;"><span style="font-size:18px;">⏱️</span><div><div style="font-weight:700;font-size:14.5px;">Response time</div><div style="font-size:13.5px;color:#56607a;">1–2 business days</div></div></div>
           </div>
-          <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:16px;">
-              <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-              <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Confirm support email address and ticketing process before launch.</span>
-            </div>
-          </sc-if>
+
           <div style="margin-top:28px;">
             <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#7B81A0;margin-bottom:12px;">LOCATIONS</div>
             <div style="font-size:14.5px;color:#1A1D30;line-height:1.7;">4625 44th Street, Suite 9 — Sacramento, CA 95820<br>1150 Eastern Avenue — Sacramento, CA</div>
           </div>
         </div>
         <div style="background:#F3F4FA;border-radius:14px;padding:32px;">
+          <sc-if value="{{ sentContact }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;padding:34px 8px;">
+              <div style="width:64px;height:64px;border-radius:50%;background:#e6f7ec;color:#1a8a4f;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 18px;">✓</div>
+              <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:24px;letter-spacing:-0.5px;margin:0 0 10px;">Message sent!</h2>
+              <p style="font-size:15px;color:#56607a;line-height:1.6;margin:0 0 22px;">Thanks for reaching out — our support team will get back to you within 1–2 business days.</p>
+              <button data-form="contact" onClick="{{ resetForm }}" style="cursor:pointer;background:#fff;border:1.5px solid #d8dcea;color:#1A1D30;font-weight:700;font-size:14px;padding:11px 22px;border-radius:6px;">Send another message</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ showContact }}" hint-placeholder-val="{{ true }}">
+          <div>
           <div style="display:inline-block;font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;background:#e8edff;color:#1A3EE8;padding:5px 11px;border-radius:5px;font-weight:700;margin-bottom:16px;">CONTACT US</div>
           <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:22px;letter-spacing:-0.5px;margin:0 0 18px;">Send us a message</h2>
-          <div style="display:flex;flex-direction:column;gap:14px;">
-            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Name</label><div style="background:#fff;border:1px solid #d8dcea;border-radius:7px;height:44px;"></div></div>
-            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Email</label><div style="background:#fff;border:1px solid #d8dcea;border-radius:7px;height:44px;"></div></div>
-            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Phone <span style="color:#7B81A0;font-weight:400;">(optional)</span></label><div style="background:#fff;border:1px solid #d8dcea;border-radius:7px;height:44px;"></div></div>
+          <form data-form="contact" data-form-type="contact" className="website-form" onSubmit="{{ submitForm }}" style="display:flex;flex-direction:column;gap:14px;">
+            <input type="text" name="hp_website" tabIndex="-1" autoComplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Name</label><input type="text" name="name" required="required" placeholder="Your full name" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Email</label><input type="email" name="email" required="required" placeholder="you@email.com" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Phone <span style="color:#7B81A0;font-weight:400;">(optional)</span></label><input type="tel" name="phone" placeholder="(916) 555-0123" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></div>
             <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">I am a…</label>
-              <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                <span style="background:#fff;border:1px solid #d8dcea;border-radius:20px;padding:8px 14px;font-size:13px;color:#56607a;">Parent</span>
-                <span style="background:#fff;border:1px solid #d8dcea;border-radius:20px;padding:8px 14px;font-size:13px;color:#56607a;">School</span>
-                <span style="background:#fff;border:1px solid #d8dcea;border-radius:20px;padding:8px 14px;font-size:13px;color:#56607a;">Charter Family</span>
-                <span style="background:#fff;border:1px solid #d8dcea;border-radius:20px;padding:8px 14px;font-size:13px;color:#56607a;">Other</span>
-              </div>
+              <select name="role" required="required" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;height:46px;padding:0 12px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;">
+                <option value="" disabled="" selected="">Select one…</option>
+                <option>Parent</option>
+                <option>School or District</option>
+                <option>Charter Family</option>
+                <option>Prospective Instructor</option>
+                <option>Other</option>
+              </select>
             </div>
-            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Message</label><div style="background:#fff;border:1px solid #d8dcea;border-radius:7px;height:100px;"></div></div>
-            <button style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border:none;border-radius:6px;margin-top:4px;">Send Message →</button>
+            <div><label style="display:block;font-size:13px;font-weight:700;color:#1A1D30;margin-bottom:6px;">Message</label><textarea name="message" required="required" placeholder="How can we help?" style="width:100%;background:#fff;border:1px solid #d8dcea;border-radius:7px;min-height:110px;padding:12px 14px;font-family:inherit;font-size:15px;color:#0A0C18;box-sizing:border-box;resize:vertical;" style-focus="border-color:#1A3EE8;box-shadow:0 0 0 3px rgba(26,62,232,0.12);outline:none;"></textarea></div>
+            <sc-if value="{{ contactError }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#fdecea;border:1px solid #f5c2c0;color:#b3261e;border-radius:7px;padding:12px 14px;font-size:14px;line-height:1.5;">Something went wrong sending your message. Please try again, or reach us directly.</div>
+            </sc-if>
+            <button type="submit" disabled="{{ contactSubmitting }}" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:15px;padding:14px 24px;border:none;border-radius:6px;margin-top:4px;opacity:{{ contactBtnOpacity }};">{{ contactSubmitLabel }}</button>
+          </form>
           </div>
+          </sc-if>
         </div>
       </div>
     </section>
@@ -893,16 +1156,14 @@
   <div>
     <section style="background:#F3F4FA;padding:60px 0;min-height:70vh;display:flex;align-items:center;">
       <div style="max-width:460px;margin:0 auto;padding:0 32px;width:100%;">
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;background:#eef1ff;border:1px solid #c3ceff;border-radius:8px;padding:12px 14px;margin-bottom:24px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#fff;background:#1A3EE8;padding:3px 7px;border-radius:3px;height:fit-content;white-space:nowrap;">UNDER REVIEW</span>
-            <span style="font-size:13px;color:#33408a;line-height:1.5;">This page was outlined on the sitemap &mdash; needs a final decision. Confirm which platform powers the portal (Sawyer, Jackrabbit, custom) before building final copy.</span>
-          </div>
-        </sc-if>
+<div style="display:flex;gap:10px;background:#eef1ff;border:1px solid #c3ceff;border-radius:8px;padding:12px 14px;margin-bottom:24px;">
+          <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#fff;background:#1A3EE8;padding:3px 7px;border-radius:3px;height:fit-content;white-space:nowrap;">COMING SOON</span>
+          <span style="font-size:13px;color:#33408a;line-height:1.5;">The full parent portal is in development. In the meantime, please contact us directly for enrollment, scheduling, or billing questions.</span>
+        </div>
         <div style="background:#fff;border:1px solid #e6e9f4;border-radius:16px;padding:36px;box-shadow:0 12px 40px rgba(10,12,24,0.06);">
           <div style="display:flex;flex-direction:column;align-items:center;line-height:1;margin-bottom:24px;">
-            <span style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:26px;letter-spacing:-1px;"><span style="color:#1A3EE8;">e</span><span style="color:#0A0C18;">STEAM</span><span style="color:#FF6B1A;">ED</span></span>
-            <span style="font-family:Consolas,monospace;font-size:9px;letter-spacing:5px;color:#7B81A0;margin-top:4px;">PARENT PORTAL</span>
+            <dc-import name="Badge" hint-size="78px,93px" style="width:78px;height:93px;display:block;margin-bottom:12px;"></dc-import>
+            <span style="font-family:Consolas,monospace;font-size:9px;letter-spacing:5px;color:#7B81A0;">PARENT PORTAL</span>
           </div>
           <p style="font-size:14.5px;color:#56607a;line-height:1.55;text-align:center;margin:0 0 24px;">Manage enrollments, view your student's schedule, track attendance, and handle payments.</p>
           <div style="display:flex;flex-direction:column;gap:14px;">
@@ -925,7 +1186,7 @@
   <div>
     <section style="background:#0A0C18;color:#fff;padding:52px 0 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:14px;">// Resources</div>
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:14px;"><br></div>
         <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:44px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 26px;">Help, policies &amp; programs</h1>
         <div style="display:flex;gap:4px;flex-wrap:wrap;">
           <button data-tab="faq" onClick="{{ handleResourceTab }}" style="cursor:pointer;background:{{ rcFaqBg }};color:{{ rcFaqColor }};font-weight:700;font-size:14px;padding:13px 20px;border:none;border-radius:8px 8px 0 0;">FAQ</button>
@@ -955,12 +1216,7 @@
               </div>
             </sc-for>
           </div>
-          <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:18px;">
-              <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-              <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Expand FAQ to 8&ndash;12 questions before launch. Add questions based on common parent/school inquiries.</span>
-            </div>
-          </sc-if>
+
         </div>
         </sc-if>
         <!-- SCHOLARSHIP -->
@@ -972,7 +1228,7 @@
             <div style="background:#F3F4FA;border-radius:12px;padding:24px;">
               <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#1A3EE8;font-weight:700;margin-bottom:14px;">ELIGIBILITY</div>
               <div style="display:flex;flex-direction:column;gap:10px;font-size:14.5px;color:#1A1D30;line-height:1.5;">
-                <div style="display:flex;gap:10px;"><span style="color:#1A3EE8;">•</span> Youth ages 5&ndash;19 residing in the Sacramento region</div>
+                <div style="display:flex;gap:10px;"><span style="color:#1A3EE8;">•</span> Youth ages 5–19 residing in the Sacramento region</div>
                 <div style="display:flex;gap:10px;"><span style="color:#1A3EE8;">•</span> Family demonstrates financial need (income verification required)</div>
                 <div style="display:flex;gap:10px;"><span style="color:#1A3EE8;">•</span> Student is enrolling in an Academy or Labs &amp; Leagues program</div>
               </div>
@@ -982,17 +1238,66 @@
               <div style="display:flex;flex-direction:column;gap:10px;font-size:14.5px;color:#1A1D30;line-height:1.5;">
                 <div style="display:flex;gap:10px;"><span style="font-weight:700;color:#FF6B1A;">1.</span> Complete the scholarship application form</div>
                 <div style="display:flex;gap:10px;"><span style="font-weight:700;color:#FF6B1A;">2.</span> Submit documentation (proof of income, student age)</div>
-                <div style="display:flex;gap:10px;"><span style="font-weight:700;color:#FF6B1A;">3.</span> Decisions made within 5&ndash;7 business days</div>
+                <div style="display:flex;gap:10px;"><span style="font-weight:700;color:#FF6B1A;">3.</span> Decisions made within 5–7 business days</div>
               </div>
             </div>
           </div>
-          <button style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:none;border-radius:6px;">Apply for a Scholarship →</button>
-          <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:18px;">
-              <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-              <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Build the scholarship application form and connect it to an intake process before launch.</span>
+          <div style="background:#0A0C18;border-radius:16px;padding:34px;">
+            <sc-if value="{{ sentScholarship }}" hint-placeholder-val="{{ false }}">
+              <div style="text-align:center;padding:40px 8px;">
+                <div style="width:64px;height:64px;border-radius:50%;background:rgba(126,224,78,0.16);color:#7EE04E;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 18px;">✓</div>
+                <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:24px;letter-spacing:-0.5px;margin:0 0 10px;color:#fff;">Application received!</h3>
+                <p style="font-size:15px;color:#B8BCCE;line-height:1.6;margin:0 0 22px;max-width:460px;margin-left:auto;margin-right:auto;">Thank you. We'll review your application and reach out within 5–7 business days with next steps for documentation.</p>
+                <button data-form="scholarship" onClick="{{ resetForm }}" style="cursor:pointer;background:transparent;border:1.5px solid #2c3350;color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border-radius:6px;">Submit another application</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ showScholarship }}" hint-placeholder-val="{{ true }}">
+            <div>
+            <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1.5px;color:#FFCC00;font-weight:700;margin-bottom:8px;">APPLICATION FORM</div>
+            <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:22px;letter-spacing:-0.5px;margin:0 0 22px;color:#fff;">Apply for a scholarship</h3>
+            <form data-form="scholarship" data-form-type="scholarship" className="website-form" onSubmit="{{ submitForm }}" style="display:flex;flex-direction:column;gap:16px;">
+              <input type="text" name="hp_website" tabIndex="-1" autoComplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Parent / guardian name</label><input type="text" name="guardian" required="required" placeholder="Full name" style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;"></div>
+                <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Email</label><input type="email" name="email" required="required" placeholder="you@email.com" style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Phone</label><input type="tel" name="phone" required="required" placeholder="(916) 555-0123" style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;"></div>
+                <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Student name</label><input type="text" name="student" required="required" placeholder="Student full name" style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+                <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Student age</label><input type="number" name="age" min="5" max="19" required="required" placeholder="5–19" style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;"></div>
+                <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Household size</label><input type="number" name="household" min="1" required="required" placeholder="e.g. 4" style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;height:46px;padding:0 14px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;"></div>
+                <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Program</label>
+                  <select name="program" required="required" style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;height:46px;padding:0 12px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;">
+                    <option value="" disabled="" selected="">Select…</option>
+                    <option>Academy &amp; Maker Space</option>
+                    <option>Labs &amp; Leagues</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Approximate annual household income</label>
+                <select name="income" required="required" style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;height:46px;padding:0 12px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;">
+                  <option value="" disabled="" selected="">Select a range…</option>
+                  <option>Under $30,000</option>
+                  <option>$30,000 – $50,000</option>
+                  <option>$50,000 – $75,000</option>
+                  <option>$75,000 – $100,000</option>
+                  <option>Over $100,000</option>
+                </select>
+              </div>
+              <div><label style="display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:6px;">Tell us about your situation <span style="color:#7B81A0;font-weight:400;">(optional)</span></label><textarea name="notes" placeholder="Anything you'd like us to know as we review your application." style="width:100%;background:#151a34;border:1px solid #2c3350;border-radius:7px;min-height:100px;padding:12px 14px;font-family:inherit;font-size:15px;color:#fff;box-sizing:border-box;resize:vertical;" style-focus="border-color:#FFCC00;box-shadow:0 0 0 3px rgba(255,204,0,0.16);outline:none;"></textarea></div>
+              <label style="display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:#B8BCCE;line-height:1.5;cursor:pointer;"><input type="checkbox" name="verify" required="required" style="margin-top:3px;width:16px;height:16px;flex-shrink:0;accent-color:#FF6B1A;"><span>I understand that income verification documentation will be requested to complete my scholarship application.</span></label>
+              <sc-if value="{{ scholarshipError }}" hint-placeholder-val="{{ false }}">
+                <div style="background:#3a1a1a;border:1px solid #5c2b28;color:#ff9d97;border-radius:7px;padding:12px 14px;font-size:14px;line-height:1.5;">Something went wrong sending your application. Please try again, or reach us directly.</div>
+              </sc-if>
+              <button type="submit" disabled="{{ scholarshipSubmitting }}" style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:15px;padding:15px 24px;border:none;border-radius:6px;margin-top:4px;opacity:{{ scholarshipBtnOpacity }};">{{ scholarshipSubmitLabel }}</button>
+            </form>
             </div>
-          </sc-if>
+            </sc-if>
+          </div>
+
         </div>
         </sc-if>
         <!-- REFERRAL -->
@@ -1006,12 +1311,7 @@
             <div style="border:1px solid #e6e9f4;border-radius:12px;padding:24px;"><div style="font-family:'Arial Black',Arial,sans-serif;font-size:26px;color:#FF6B1A;margin-bottom:8px;">03</div><div style="font-size:14.5px;color:#1A1D30;line-height:1.5;font-weight:600;">Rewards apply toward future enrollment fees</div></div>
           </div>
           <button style="cursor:pointer;background:#FF6B1A;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:none;border-radius:6px;">Get My Referral Link →</button>
-          <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:18px;">
-              <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-              <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Confirm referral reward amounts and platform (e.g., referral code system) before launch.</span>
-            </div>
-          </sc-if>
+
         </div>
         </sc-if>
         <!-- REFUND -->
@@ -1024,7 +1324,7 @@
               <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1px;color:#1A1D30;font-weight:700;margin-bottom:16px;">CLASS CANCELLATIONS</div>
               <div style="display:flex;flex-direction:column;gap:12px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #f0f1f7;padding-bottom:10px;"><span style="font-size:14px;color:#56607a;">7+ days before</span><span style="font-size:13px;font-weight:700;color:#1a8a4f;background:#e6f7ec;padding:4px 10px;border-radius:5px;">Full refund</span></div>
-                <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #f0f1f7;padding-bottom:10px;"><span style="font-size:14px;color:#56607a;">3&ndash;6 days before</span><span style="font-size:13px;font-weight:700;color:#9A7B00;background:#fff7d6;padding:4px 10px;border-radius:5px;">50% refund</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #f0f1f7;padding-bottom:10px;"><span style="font-size:14px;color:#56607a;">3–6 days before</span><span style="font-size:13px;font-weight:700;color:#9A7B00;background:#fff7d6;padding:4px 10px;border-radius:5px;">50% refund</span></div>
                 <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span style="font-size:14px;color:#56607a;">Less than 3 days</span><span style="font-size:13px;font-weight:700;color:#c0392b;background:#fdecea;padding:4px 10px;border-radius:5px;">No refund</span></div>
               </div>
             </div>
@@ -1032,18 +1332,13 @@
               <div style="font-family:Consolas,monospace;font-size:11px;letter-spacing:1px;color:#1A1D30;font-weight:700;margin-bottom:16px;">LEAGUE / SESSION ENROLLMENTS</div>
               <div style="display:flex;flex-direction:column;gap:12px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #f0f1f7;padding-bottom:10px;"><span style="font-size:14px;color:#56607a;">14+ days before</span><span style="font-size:13px;font-weight:700;color:#1a8a4f;background:#e6f7ec;padding:4px 10px;border-radius:5px;">Full refund</span></div>
-                <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #f0f1f7;padding-bottom:10px;"><span style="font-size:14px;color:#56607a;">7&ndash;13 days before</span><span style="font-size:13px;font-weight:700;color:#9A7B00;background:#fff7d6;padding:4px 10px;border-radius:5px;">50% refund</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #f0f1f7;padding-bottom:10px;"><span style="font-size:14px;color:#56607a;">7–13 days before</span><span style="font-size:13px;font-weight:700;color:#9A7B00;background:#fff7d6;padding:4px 10px;border-radius:5px;">50% refund</span></div>
                 <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span style="font-size:14px;color:#56607a;">Less than 7 days</span><span style="font-size:13px;font-weight:700;color:#c0392b;background:#fdecea;padding:4px 10px;border-radius:5px;">No refund</span></div>
               </div>
             </div>
           </div>
           <div style="background:#F3F4FA;border-radius:10px;padding:18px 20px;font-size:14.5px;color:#56607a;line-height:1.55;"><b style="color:#0A0C18;">Exceptions:</b> We will work with families in cases of medical emergencies or extraordinary circumstances. Contact support@esteamedacademy.com.</div>
-          <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:18px;">
-              <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-              <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Have legal counsel review refund policy language before publishing.</span>
-            </div>
-          </sc-if>
+
         </div>
         </sc-if>
         <!-- AFFILIATE -->
@@ -1057,12 +1352,7 @@
             <div style="aspect-ratio:3/2;border-radius:10px;background:repeating-linear-gradient(135deg,#eef0f7,#eef0f7 12px,#e6e9f4 12px,#e6e9f4 24px);border:1px solid #d8dcea;display:flex;align-items:center;justify-content:center;font-family:Consolas,monospace;font-size:11px;color:#7B81A0;letter-spacing:1px;">AFFILIATE LOGO</div>
           </div>
           <button style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:none;border-radius:6px;">Learn About Our Affiliates →</button>
-          <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-            <div style="display:flex;gap:10px;background:#FFF8E1;border:1px dashed #E6B200;border-radius:6px;padding:10px 12px;margin-top:18px;">
-              <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9A7B00;background:#FFCC00;padding:2px 6px;border-radius:3px;height:fit-content;white-space:nowrap;">DRAFT NOTE</span>
-              <span style="font-size:13px;color:#6b5a16;line-height:1.5;">Add specific affiliate companies, logos, and descriptions before launch.</span>
-            </div>
-          </sc-if>
+
         </div>
         </sc-if>
       </div>
@@ -1079,7 +1369,7 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;position:relative;text-align:center;">
         <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">// Enroll Now</div>
         <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 18px;">Ready to get started?<br>Let's find the right program.</h1>
-        <p style="font-size:18px;color:#B8BCCE;line-height:1.6;max-width:680px;margin:0 auto;">Whether you're a parent looking for after-school enrichment, a charter family planning your student's year, or a school looking to partner &mdash; enrollment starts here.</p>
+        <p style="font-size:18px;color:#B8BCCE;line-height:1.6;max-width:680px;margin:0 auto;">Whether you're a parent looking for after-school enrichment, a charter family planning your student's year, or a school looking to partner — enrollment starts here.</p>
       </div>
     </section>
     <section style="background:#fff;padding:56px 0;">
@@ -1090,13 +1380,13 @@
           <div data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;border:1px solid #e6e9f4;border-radius:14px;padding:28px;border-top:5px solid #FF6B1A;display:flex;flex-direction:column;">
             <div style="font-size:26px;margin-bottom:12px;">🛠️</div>
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:20px;margin:0 0 8px;">Enroll in an Academy Class</h3>
-            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0 0 18px;flex:1;">Browse the class schedule at 4625 44th Street &mdash; game dev, 3D printing, AI, and coding.</p>
+            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0 0 18px;flex:1;">Browse the class schedule at 4625 44th Street — game dev, 3D printing, AI, and coding.</p>
             <span style="font-weight:700;color:#FF6B1A;font-size:15px;">Browse Class Schedule →</span>
           </div>
           <div data-page="program-labs" onClick="{{ handleNav }}" style="cursor:pointer;border:1px solid #e6e9f4;border-radius:14px;padding:28px;border-top:5px solid #FFCC00;display:flex;flex-direction:column;">
             <div style="font-size:26px;margin-bottom:12px;">🤖</div>
             <h3 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:20px;margin:0 0 8px;">Join a League</h3>
-            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0 0 18px;flex:1;">Register for fall labs or spring competition teams &mdash; robotics, eSports, and more.</p>
+            <p style="font-size:14.5px;color:#56607a;line-height:1.55;margin:0 0 18px;flex:1;">Register for fall labs or spring competition teams — robotics, eSports, and more.</p>
             <span style="font-weight:700;color:#C99E00;font-size:15px;">Register for a League →</span>
           </div>
           <div data-page="schools" onClick="{{ handleNav }}" style="cursor:pointer;border:1px solid #e6e9f4;border-radius:14px;padding:28px;border-top:5px solid #1A3EE8;display:flex;flex-direction:column;">
@@ -1122,12 +1412,7 @@
             </div>
           </div>
         </div>
-        <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;gap:10px;background:#eef1ff;border:1px solid #c3ceff;border-radius:8px;padding:12px 14px;margin:28px auto 0;max-width:920px;">
-            <span style="font-family:Consolas,monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#fff;background:#1A3EE8;padding:3px 7px;border-radius:3px;height:fit-content;white-space:nowrap;">ASSEMBLY NOTE</span>
-            <span style="font-size:13px;color:#33408a;line-height:1.5;">This is the conversion hub. It should use a branching widget or tabbed interface to route users by who they are (parent, school, charter). Confirm the enrollment platform (Sawyer, Jackrabbit, custom form) before building this page.</span>
-          </div>
-        </sc-if>
+
       </div>
     </section>
   </div>
@@ -1141,9 +1426,8 @@
     <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
       <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid #1a1e30;">
         <div>
-          <div style="display:flex;flex-direction:column;line-height:1;margin-bottom:18px;">
-            <span style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:24px;letter-spacing:-1px;"><span style="color:#4F6EF7;">e</span><span style="color:#fff;">STEAM</span><span style="color:#FF6B1A;">ED</span></span>
-            <span style="font-family:Consolas,monospace;font-size:9px;letter-spacing:5px;color:#7B81A0;margin-top:3px;">ACADEMY</span>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+            <dc-import name="Badge" hint-size="66px,79px" style="width:66px;height:79px;display:block;flex-shrink:0;"></dc-import>
           </div>
           <p style="font-size:14.5px;line-height:1.6;max-width:300px;margin:0 0 18px;color:#7B81A0;">Building the next generation of makers, engineers, coders, and innovators across the Sacramento region.</p>
           <div style="font-family:Consolas,monospace;font-size:12px;line-height:1.7;color:#7B81A0;">4625 44th Street, Suite 9<br>Sacramento, CA 95820</div>
@@ -1183,24 +1467,62 @@
     </div>
   </footer>
 
-  <!-- ================= DRAFT TOGGLE ================= -->
-  <button onClick="{{ toggleNotes }}" style="position:fixed;bottom:22px;right:22px;z-index:200;cursor:pointer;display:flex;align-items:center;gap:8px;background:#0A0C18;color:#fff;border:1px solid #2c3350;border-radius:30px;padding:11px 18px;font-family:Consolas,monospace;font-size:12px;letter-spacing:0.5px;box-shadow:0 8px 24px rgba(0,0,0,0.28);">
-    <span style="width:9px;height:9px;border-radius:50%;background:{{ notesDot }};"></span>{{ notesLabel }}
-  </button>
-
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;}}">
-class Component extends DCLogic {
-  state = { page: 'home', openMenu: null, showNotes: true, faqOpen: 0, resourceTab: 'faq' };
+// Google Apps Script Web App endpoint — paste your deployed /exec URL here.
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwXvULQvjy-lp8WrLZ0Wk_qXqLNKuTCeGQjFnYgJyBGu81WIJxDCot8ZUG5WJbcQRW_/exec";
 
-  go(page) {
+class Component extends DCLogic {
+  state = { page: 'home', openMenu: null, faqOpen: 0, resourceTab: 'faq', submitted: {}, formStatus: {} };
+
+  // Shared submit handler for all four website-form forms (contact, partnership, scholarship, instructor).
+  submitForm = async (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const key = form.getAttribute('data-form');
+    if (this.state.formStatus[key] === 'submitting') return; // guard against duplicate/double-click submits
+    this.setState(s => ({ formStatus: { ...s.formStatus, [key]: 'submitting' } }));
+    try {
+      const fd = new FormData(form);
+      fd.append('formType', key);
+      const res = await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: fd });
+      let ok = res.ok;
+      if (ok) {
+        try { const data = await res.json(); if (data && data.result === 'error') ok = false; } catch (_) { /* non-JSON ok response still counts as success */ }
+      }
+      if (!ok) throw new Error('submit failed');
+      try { form.reset(); } catch (_) {}
+      this.setState(s => ({ submitted: { ...s.submitted, [key]: true }, formStatus: { ...s.formStatus, [key]: 'idle' } }));
+    } catch (err) {
+      this.setState(s => ({ formStatus: { ...s.formStatus, [key]: 'error' } }));
+    }
+  };
+  resetForm = (e) => {
+    const key = e.currentTarget.getAttribute('data-form');
+    this.setState(s => ({ submitted: { ...s.submitted, [key]: false }, formStatus: { ...s.formStatus, [key]: 'idle' } }));
+  };
+
+  go(page, scrollToId) {
     this.setState({ page, openMenu: null });
+    if (scrollToId) {
+      setTimeout(() => {
+        const el = document.getElementById(scrollToId);
+        if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }, 50);
+      return;
+    }
     try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, 0); }
   }
+  handleNavStop = (e) => {
+    e.stopPropagation();
+    this.handleNav(e);
+  };
+
   handleNav = (e) => {
     const p = e.currentTarget.getAttribute('data-page');
-    if (p) this.go(p);
+    const scrollToId = e.currentTarget.getAttribute('data-scroll-to');
+    if (p) this.go(p, scrollToId);
   };
   handleMenu = (e) => {
     const m = e.currentTarget.getAttribute('data-menu');
@@ -1216,7 +1538,12 @@ class Component extends DCLogic {
     const t = e.currentTarget.getAttribute('data-tab');
     if (t) this.setState({ resourceTab: t });
   };
-  toggleNotes = () => this.setState(s => ({ showNotes: !s.showNotes }));
+  componentDidMount() {
+    window.gotoPage = (p, tab) => {
+      if (p === 'resources') this.setState({ page: 'resources', resourceTab: tab || 'faq', openMenu: null });
+      else this.go(p);
+    };
+  }
   handleFaq = (e) => {
     const i = parseInt(e.currentTarget.getAttribute('data-faq'), 10);
     this.setState(s => ({ faqOpen: s.faqOpen === i ? -1 : i }));
@@ -1233,7 +1560,7 @@ class Component extends DCLogic {
     ];
     const faqs = faqData.map((f, i) => ({ q: f.q, a: f.a, idx: String(i), open: this.state.faqOpen === i }));
     return {
-      isHome: p === 'home', isPrograms: p === 'programs',
+      isHome: p === 'home', isPrograms: p === 'programs', isAvailableClasses: p === 'available-classes',
       isAcademy: p === 'program-academy', isLabs: p === 'program-labs', isExpanded: p === 'program-expanded',
       isAbout: p === 'about', isCharter: p === 'charter', isSchools: p === 'schools',
       isCareers: p === 'careers', isContact: p === 'contact', isResources: p === 'resources',
@@ -1242,9 +1569,6 @@ class Component extends DCLogic {
       openProgramsMenu: this.state.openMenu === 'programs',
       openResourcesMenu: this.state.openMenu === 'resources',
       anyMenuOpen: this.state.openMenu !== null,
-      showNotes: this.state.showNotes,
-      notesLabel: this.state.showNotes ? 'Draft notes: ON' : 'Draft notes: OFF',
-      notesDot: this.state.showNotes ? '#FFCC00' : '#56607a',
       faqs,
       faqOpen: this.state.faqOpen,
       resourceTab: this.state.resourceTab,
@@ -1264,12 +1588,38 @@ class Component extends DCLogic {
       rcAffiliateBg: this.state.resourceTab === 'affiliate' ? '#fff' : 'rgba(255,255,255,0.08)',
       rcAffiliateColor: this.state.resourceTab === 'affiliate' ? '#0A0C18' : '#B8BCCE',
       handleNav: this.handleNav,
+      handleNavStop: this.handleNavStop,
       handleMenu: this.handleMenu,
       closeMenus: this.closeMenus,
       goResource: this.goResource,
       handleResourceTab: this.handleResourceTab,
-      toggleNotes: this.toggleNotes,
-      handleFaq: this.handleFaq
+      handleFaq: this.handleFaq,
+      submitForm: this.submitForm,
+      resetForm: this.resetForm,
+      sentContact: !!this.state.submitted.contact, showContact: !this.state.submitted.contact,
+      sentPartnership: !!this.state.submitted.partnership, showPartnership: !this.state.submitted.partnership,
+      sentInstructor: !!this.state.submitted.instructor, showInstructor: !this.state.submitted.instructor,
+      sentScholarship: !!this.state.submitted.scholarship, showScholarship: !this.state.submitted.scholarship,
+
+      contactSubmitting: this.state.formStatus.contact === 'submitting',
+      contactError: this.state.formStatus.contact === 'error',
+      contactSubmitLabel: this.state.formStatus.contact === 'submitting' ? 'Submitting...' : 'Send Message \u2192',
+      contactBtnOpacity: this.state.formStatus.contact === 'submitting' ? '0.65' : '1',
+
+      partnershipSubmitting: this.state.formStatus.partnership === 'submitting',
+      partnershipError: this.state.formStatus.partnership === 'error',
+      partnershipSubmitLabel: this.state.formStatus.partnership === 'submitting' ? 'Submitting...' : 'Submit Partnership Inquiry \u2192',
+      partnershipBtnOpacity: this.state.formStatus.partnership === 'submitting' ? '0.65' : '1',
+
+      instructorSubmitting: this.state.formStatus.instructor === 'submitting',
+      instructorError: this.state.formStatus.instructor === 'error',
+      instructorSubmitLabel: this.state.formStatus.instructor === 'submitting' ? 'Submitting...' : 'Submit Application \u2192',
+      instructorBtnOpacity: this.state.formStatus.instructor === 'submitting' ? '0.65' : '1',
+
+      scholarshipSubmitting: this.state.formStatus.scholarship === 'submitting',
+      scholarshipError: this.state.formStatus.scholarship === 'error',
+      scholarshipSubmitLabel: this.state.formStatus.scholarship === 'submitting' ? 'Submitting...' : 'Submit Scholarship Application \u2192',
+      scholarshipBtnOpacity: this.state.formStatus.scholarship === 'submitting' ? '0.65' : '1'
     };
   }
 }
