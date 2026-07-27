@@ -1,0 +1,34 @@
+eSTEAMED ACADEMY — WEBSITE COPY DRAFT
+Section: About → Our Locations
+COPY NOTE: This page is intentionally light on unconfirmed specifics (hours, parking, which programs run where). Sersi — drop headline/subhead/body directly into the Figma frames; each location block is designed to repeat as a card/module. Gray italics are review notes only.
+
+OUR LOCATIONS
+Two Studios. One Sacramento Home Base.
+eSTEAMED Academy operates out of two locations in the Sacramento/Carmichael area — come build with us at either one.
+
+LOCATION 1
+The Innovation Studio
+1150 Eastern Avenue, Sacramento, CA
+Our flagship makerspace and program hub. This is where most in-person classes, Makers Mondays, and Labs sessions run.
+[Hours — placeholder]
+[Parking / drop-off notes — placeholder]
+[CTA: Get Directions]
+COPY NOTE: Confirm what specifically runs at this address (e.g., is this the primary Makerspace + Labs &amp; Leagues location?) so we can replace the generic description above.
+
+LOCATION 2
+4625 44th Street, Suite 9
+4625 44th Street, Suite 9, Sacramento, CA
+[Description placeholder — e.g., secondary program site, Expanded Learning administrative hub, overflow classroom space, etc.]
+[Hours — placeholder]
+[Parking / drop-off notes — placeholder]
+[CTA: Get Directions]
+COPY NOTE: Need a confirmed description of this location&apos;s role before finalizing — flagged in Company Overview draft as well. Once confirmed, both location blocks should read as parallel/consistent in structure.
+
+FIND US
+[Map Embed Placeholder — both locations pinned]
+COPY NOTE: Recommend an embedded map (Google Maps or Figma static map graphic) showing both pins with a short distance/travel note between them, since some families may use both locations.
+
+NEXT STEP
+Ready to Visit?
+[CTA Button: Find a Class Near You]   [CTA Button: Enroll Now]
+COPY NOTE: Confirm whether &apos;Find a Class Near You&apos; should filter/link classes by location once the enrollment platform (GHL or parent portal) is finalized.
