@@ -1,0 +1,37 @@
+eSTEAMED ACADEMY — WEBSITE COPY DRAFT
+Section: About → Why eSTEAMED
+COPY NOTE: This page exists to make the case for eSTEAMED over other enrichment options (iCode, Code Ninjas, Vision Esports Academy, generic afterschool clubs). Sersi — drop headline/subhead/body directly into the Figma frames; gray italics are review notes only.
+
+WHY ESTEAMED
+Because STEM Shouldn&apos;t Be a One-Off. It Should Be a Season.
+Plenty of places teach kids to code or build a robot for an hour a week. We built something different: a program where those skills carry forward into a team, a season, and a championship — the same structure that makes kids show up early for soccer practice, applied to STEAM.
+
+WHAT MAKES US DIFFERENT
+We&apos;re Not a Class. We&apos;re a League.
+Most enrichment programs stop at the class. We don&apos;t. eSTEAMED is built around a Labs-to-Leagues pathway: kids start in a Makerspace class or Lab, build real skill, and then have somewhere to take it — a robotics team, an esports roster, or our own eSTEAMED STEAM Challenge League.
+That means practice has a purpose. Every skill kids learn in a Lab session is something they&apos;ll use to compete, not just something they&apos;ll forget over the summer.
+COPY NOTE: Consider adding a simple visual funnel graphic here (Class → Lab → Team → League) once Figma layout is set — flagged for Sersi/design, not copy.
+The STEAM Challenge League — Nothing Else Like It
+Our proprietary eSTEAMED STEAM Challenge League blends escape-room puzzles, engineering builds, and academic-decathlon-style challenges into a single competitive format. It&apos;s the kind of event families circle on the calendar — and right now, no one else in the region offers anything like it.
+Real Competition, Real Structure
+Team jerseys. Public standings. Championship events. A draft night. A parent-coach pipeline. We borrowed the parts of youth sports that actually work and applied them to robotics and esports — because kids don&apos;t get excited about worksheets, they get excited about making the team.
+
+BUILT FOR EVERY AGE &amp; STAGE
+One Pathway, Ages 5 to 19.
+Most programs age out at 12. We don&apos;t. eSTEAMED is built as a long runway — from a first Makers Monday session in elementary school, through VEX IQ and VEX V5 robotics, to leadership roles coaching younger teams as our older students grow into mentors.
+COPY NOTE: Confirm whether we want to name a specific &apos;grow into mentors / student coach&apos; pathway here, or hold that language for a future Leagues-specific page once that structure is built out.
+
+ROOTED IN SACRAMENTO
+Local, In-Person, and Connected to Your School Day.
+We&apos;re not a national franchise running the same script in every city. eSTEAMED is built in and for the Sacramento region — with a physical Innovation Studio your kids can walk into, and direct partnerships with local school districts through our Expanded Learning programs.
+That means the same STEAM curriculum your child sees at school can continue after the bell rings, without switching brands, platforms, or instructors.
+
+GET IN EARLY
+Founding Families Get to Shape What This Becomes.
+We&apos;re opening enrollment before the doors do. Families who join now aren&apos;t just signing up for a class — they&apos;re founding members of the first STEAM league of its kind in Sacramento, with early access to teams, priority scheduling, and founding-family pricing.
+COPY NOTE: Founding-family pricing/perks structure isn&apos;t finalized — placeholder language above. Confirm specifics (discount amount, priority scheduling terms, cutoff date) before this goes live.
+
+NEXT STEP
+See What Your Kid Could Build.
+[CTA Button: Explore Our Programs]   [CTA Button: Enroll Now]
+COPY NOTE: Confirm CTA routing — Programs vs. Enroll Now vs. a &apos;Book a Tour&apos; option for the Innovation Studio, if that becomes part of the funnel.

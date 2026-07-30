@@ -1,0 +1,37 @@
+eSTEAMED ACADEMY — WEBSITE COPY DRAFT
+Section: About → Company Overview
+COPY NOTE: This is a first-draft copy pass for the Company Overview sub-page under the About dropdown. Sersi — please drop headline/subhead/body directly into the Figma frames; anything in gray italics is a note for AJ&apos;s review and should NOT be placed into the design.
+
+WHO WE ARE
+Building the Next Generation of Builders.
+eSTEAMED Academy is a Sacramento-region STEAM education company serving youth ages 5–19. We run hands-on enrichment classes, competitive robotics and esports leagues, and school-based expanded learning programs — all designed around one idea: kids learn best when curiosity has somewhere to go.
+We believe STEM shouldn&apos;t feel like homework. It should feel like a team you make the cut for, a build you can&apos;t wait to finish, and a season you&apos;re counting down to. That&apos;s why everything we do is built on the same principle that makes youth sports so powerful — practice, teams, seasons, and a place to show what you&apos;ve built.
+COPY NOTE: Founding story / year established / founder bio are not yet defined for this page. Flag as placeholder — recommend a short &apos;Our Story&apos; paragraph once finalized (who started it, why, and what problem it solves for Sacramento-area families).
+
+WHAT WE DO
+Three Programs. One Mission.
+eSTEAMED Academy operates three connected programs, each designed to meet kids and families where they are:
+eSTEAMED Academy &amp; Makerspace
+Our in-person home base. Weekly enrichment classes in coding, game development, 3D printing, and AI, plus open Makers Mondays sessions where kids can build on their own projects using our tools and space.
+eSTEAMED Labs &amp; Leagues
+Our competitive track. Seasonal robotics and esports teams — including VEX IQ robotics and our proprietary eSTEAMED STEAM Challenge League — that turn STEM skills into team sport. Kids practice, compete, and climb toward championship season, just like they would on a soccer or basketball team.
+eSTEAMED Expanded Learning Academy
+Our school partnership arm. We bring STEM enrichment, youth development, and esports programming directly into afterschool programs (ELOP) at partner districts across the Sacramento region.
+COPY NOTE: Confirm whether Expanded Learning Academy should be described here in Company Overview at all, since that channel is intentionally kept separate from the for-profit enrollment funnel — recommend keeping this description high-level and directing district partners to the &apos;For Schools&apos; page rather than listing district names here.
+
+WHERE WE ARE
+Our Locations
+eSTEAMED Academy operates out of two locations in the Sacramento region:
+1150 Eastern Avenue — The Innovation Studio (Sacramento/Carmichael)
+4625 44th Street, Suite 9 (Sacramento/Carmichael)
+COPY NOTE: Confirm which location(s) host which programs (e.g., is one primarily Makerspace/Labs and the other admin/Expanded Learning operations?) so we can add a short line distinguishing them. Also confirm whether both addresses should link out to a map/directions on this page or only on a dedicated Locations page.
+
+OUR WHY
+Where Curiosity Meets Competition.
+Our mission is simple: make STEM participation as common — and as exciting — as youth soccer. Every class, team, and league we run is built to turn curiosity into confidence, and confidence into competition-ready skill.
+Whether your child is 3D printing their first design, coding their first game, or gearing up for a robotics championship, eSTEAMED Academy is where they build it.
+
+NEXT STEP
+Ready to see it for yourself?
+[CTA Button: Explore Our Programs]     [CTA Button: Find a Class Near You]
+COPY NOTE: CTA copy pulled from the homepage hero for consistency — confirm these should route to Programs and Locations respectively, or if Company Overview should route somewhere else (e.g., Enroll Now).
