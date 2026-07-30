@@ -13,6 +13,7 @@
   body{margin:0;}
   a{text-decoration:none;color:inherit;}
   button{font-family:inherit;}
+  html{scroll-behavior:smooth;}
   @keyframes ddIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
   @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -46,16 +47,20 @@
   @media (prefers-reduced-motion: reduce){
     .enroll-hero-video{display:none !important;}
     .enroll-hero-poster{display:block !important;}
+    .progs-hero-video{display:none !important;}
+    .progs-hero-poster{display:block !important;}
   }
   @media (max-width:900px){
     .enroll-hero-video-sec{height:480px !important;}
     .enroll-hero-h1{font-size:36px !important;}
     .enroll-hero-p{font-size:16px !important;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr) !important;}
   }
   @media (max-width:640px){
     .enroll-hero-video-sec{height:380px !important;}
     .enroll-hero-h1{font-size:28px !important;letter-spacing:-0.5px !important;}
     .enroll-hero-p{font-size:14.5px !important;}
+    .gallery-grid{grid-template-columns:1fr !important;}
   }
 </style>
 </helmet>
@@ -87,9 +92,9 @@
             <button data-menu="about" onClick="{{ handleMenu }}" class="nav-anim" style="cursor:pointer;padding:8px 12px;border-radius:4px;background:none;border:none;font-size:15px;font-weight:600;color:#1A1D30;display:flex;align-items:center;gap:5px;">About<span style="font-size:9px;color:#7B81A0;">▼</span></button>
             <sc-if value="{{ openAboutMenu }}" hint-placeholder-val="{{ false }}">
               <div style="position:absolute;top:calc(100% + 8px);left:0;min-width:230px;background:#fff;border:1px solid #e6e9f4;border-radius:8px;box-shadow:0 12px 32px rgba(10,12,24,0.14);padding:8px;z-index:95;animation:ddIn 0.16s ease;">
-                <a data-page="about" onClick="{{ handleNav }}" style="cursor:pointer;display:block;padding:10px 12px;border-radius:5px;font-size:14px;color:#1A1D30;">Company Overview</a>
-                <a data-page="about" onClick="{{ handleNav }}" style="cursor:pointer;display:block;padding:10px 12px;border-radius:5px;font-size:14px;color:#1A1D30;">Why eSTEAMED</a>
-                <a data-page="about" onClick="{{ handleNav }}" style="cursor:pointer;display:block;padding:10px 12px;border-radius:5px;font-size:14px;color:#1A1D30;">Our Locations</a>
+                <a data-page="about" data-scroll-to="company-overview" onClick="{{ handleNav }}" style="cursor:pointer;display:block;padding:10px 12px;border-radius:5px;font-size:14px;color:#1A1D30;">Company Overview</a>
+                <a data-page="about" data-scroll-to="why-esteamed" onClick="{{ handleNav }}" style="cursor:pointer;display:block;padding:10px 12px;border-radius:5px;font-size:14px;color:#1A1D30;">Why eSTEAMED</a>
+                <a data-page="about" data-scroll-to="find-us" onClick="{{ handleNav }}" style="cursor:pointer;display:block;padding:10px 12px;border-radius:5px;font-size:14px;color:#1A1D30;">Our Locations</a>
               </div>
             </sc-if>
           </div>
@@ -282,8 +287,13 @@
   <!-- ============ PROGRAMS OVERVIEW ============ -->
   <sc-if value="{{ isPrograms }}" hint-placeholder-val="{{ false }}">
   <div>
-    <section style="background:#0A0C18;color:#fff;padding:64px 0;">
-      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+    <section class="progs-hero-video-sec" style="background:#0A0C18;color:#fff;padding:64px 0;position:relative;overflow:hidden;">
+      <video class="progs-hero-video" ref="{{ progsHeroVideoRef }}" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="uploads/ChatGPT Image Jul 28, 2026, 11_31_40 PM.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+        <source src="uploads/ce46c4c9-21a3-433f-9d05-5f029c307706.mp4" type="video/mp4">
+      </video>
+      <img class="progs-hero-poster" src="uploads/ChatGPT Image Jul 28, 2026, 11_31_40 PM.png" alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+      <div style="position:absolute;inset:0;background:rgba(10,12,24,0.35);"></div>
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;position:relative;z-index:1;">
         <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">PROGRAMS</div>
         <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:52px;letter-spacing:-1.5px;line-height:1.0;margin:0 0 18px;animation:fadeUp .6s ease both;">Three distinct tracks.<br>One mission.</h1>
         <p style="font-size:19px;color:#B8BCCE;max-width:620px;margin:0;line-height:1.55;">eSTEAMED offers three distinct program tracks, each designed to meet youth where they are and take them further.</p>
@@ -294,10 +304,8 @@
 
         <!-- ACADEMY -->
         <div data-page="program-academy" onClick="{{ handleNav }}" style="cursor:pointer;display:flex;background:#fff;border:1px solid #e6e9f4;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(15,20,48,0.05);transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 20px 48px rgba(255,107,26,0.16);">
-          <div style="position:relative;width:340px;flex-shrink:0;background:linear-gradient(150deg,#fff4ec,#ffe0cc);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-            <span style="position:absolute;top:-24px;right:6px;font-family:'Arial Black',Arial,sans-serif;font-size:150px;line-height:1;color:rgba(255,107,26,0.12);">01</span>
-            <div style="position:relative;width:96px;height:96px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(255,107,26,0.25);display:flex;align-items:center;justify-content:center;font-size:44px;">🛠️</div>
-            <span style="position:absolute;bottom:16px;left:16px;font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#c97a3d;background:rgba(255,255,255,0.7);padding:4px 8px;border-radius:5px;">MAKERSPACE PHOTO</span>
+          <div class="img-hover-zoom" style="position:relative;width:340px;flex-shrink:0;overflow:hidden;">
+            <img src="uploads/ChatGPT Image Jul 28, 2026, 11_31_40 PM.png" alt="eSTEAMED Academy students building at the makerspace" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
           </div>
           <div style="padding:34px 38px;flex:1;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
@@ -321,10 +329,8 @@
 
         <!-- LABS & LEAGUES -->
         <div data-page="program-labs" onClick="{{ handleNav }}" style="cursor:pointer;display:flex;background:#fff;border:1px solid #e6e9f4;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(15,20,48,0.05);transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 20px 48px rgba(201,158,0,0.16);">
-          <div style="position:relative;width:340px;flex-shrink:0;background:linear-gradient(150deg,#fff9e6,#ffefb8);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-            <span style="position:absolute;top:-24px;right:6px;font-family:'Arial Black',Arial,sans-serif;font-size:150px;line-height:1;color:rgba(201,158,0,0.16);">02</span>
-            <div style="position:relative;width:96px;height:96px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(201,158,0,0.28);display:flex;align-items:center;justify-content:center;font-size:44px;">🏆</div>
-            <span style="position:absolute;bottom:16px;left:16px;font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#a9840e;background:rgba(255,255,255,0.7);padding:4px 8px;border-radius:5px;">COMPETITION PHOTO</span>
+          <div class="img-hover-zoom" style="position:relative;width:340px;flex-shrink:0;overflow:hidden;">
+            <img src="uploads/ChatGPT Image Jul 28, 2026, 11_41_03 PM.png" alt="eSTEAMED Labs and Leagues students competing with a VEX robot" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
           </div>
           <div style="padding:34px 38px;flex:1;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
@@ -348,10 +354,8 @@
 
         <!-- EXPANDED LEARNING -->
         <div data-page="program-expanded" onClick="{{ handleNav }}" style="cursor:pointer;display:flex;background:#fff;border:1px solid #e6e9f4;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(15,20,48,0.05);transition:transform .18s ease,box-shadow .18s ease;" style-hover="transform:translateY(-4px);box-shadow:0 20px 48px rgba(26,62,232,0.16);">
-          <div style="position:relative;width:340px;flex-shrink:0;background:linear-gradient(150deg,#eaeeff,#d2ddff);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-            <span style="position:absolute;top:-24px;right:6px;font-family:'Arial Black',Arial,sans-serif;font-size:150px;line-height:1;color:rgba(26,62,232,0.12);">03</span>
-            <div style="position:relative;width:96px;height:96px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(26,62,232,0.25);display:flex;align-items:center;justify-content:center;font-size:44px;">🏫</div>
-            <span style="position:absolute;bottom:16px;left:16px;font-family:Consolas,monospace;font-size:10px;letter-spacing:1px;color:#4a63c9;background:rgba(255,255,255,0.7);padding:4px 8px;border-radius:5px;">CLASSROOM PHOTO</span>
+          <div class="img-hover-zoom" style="position:relative;width:340px;flex-shrink:0;overflow:hidden;">
+            <img src="uploads/ChatGPT Image Jul 28, 2026, 11_44_45 PM.png" alt="eSTEAMED Expanded Learning students in a school classroom" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
           </div>
           <div style="padding:34px 38px;flex:1;display:flex;flex-direction:column;">
             <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
@@ -669,7 +673,7 @@
         <p style="font-size:18px;color:#B8BCCE;max-width:680px;line-height:1.6;margin:0;animation:fadeUp .6s ease .1s both;">eSTEAMED Academy is a Sacramento-region STEAM education company serving youth ages 5–19. We run hands-on enrichment classes, competitive robotics and esports leagues, and school-based expanded learning programs — all built on one idea: kids learn best when curiosity has somewhere to go.</p>
       </div>
     </section>
-    <section style="background:#fff;padding:60px 0;">
+    <section id="company-overview" style="background:#fff;padding:60px 0;scroll-margin-top:120px;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
         <div>
           <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:14px;">COMPANY OVERVIEW</div>
@@ -677,9 +681,8 @@
           <p style="font-size:16.5px;color:#56607a;line-height:1.65;margin:0 0 16px;">eSTEAMED Academy is a Sacramento-region STEAM education company serving youth ages 5–19. We run hands-on enrichment classes, competitive robotics and esports leagues, and school-based expanded learning programs across the Capital Region.</p>
           <p style="font-size:16.5px;color:#56607a;line-height:1.65;margin:0;">We believe STEM shouldn't feel like homework. It should feel like a team you make the cut for, a build you can't wait to finish, and a season you're counting down to — the same principle that makes youth sports so powerful, applied to STEAM.</p>
         </div>
-        <div style="aspect-ratio:4/3.3;border-radius:12px;background:repeating-linear-gradient(135deg,#eef0f7,#eef0f7 14px,#e6e9f4 14px,#e6e9f4 28px);border:1px solid #d8dcea;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
-          <span style="font-size:28px;">👩‍🔬</span>
-          <span style="font-family:Consolas,monospace;font-size:11px;color:#7B81A0;text-transform:uppercase;letter-spacing:1px;text-align:center;">Photo · team or students<br>in the makerspace</span>
+        <div class="img-hover-zoom" style="aspect-ratio:504/488;border-radius:12px;border:1px solid #d8dcea;overflow:hidden;box-shadow:0 20px 44px rgba(10,12,24,0.1);">
+          <img src="uploads/img3.png" alt="eSTEAMED Academy students collaborating on a robotics build" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
         </div>
       </div>
     </section>
@@ -725,7 +728,7 @@
         </div>
       </div>
     </section>
-    <section style="background:#fff;padding:60px 0;">
+    <section id="why-esteamed" style="background:#fff;padding:60px 0;scroll-margin-top:120px;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#FF6B1A;text-transform:uppercase;font-weight:700;margin-bottom:14px;">WHY ESTEAMED</div>
         <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;margin:0 0 14px;max-width:760px;line-height:1.1;">There's no shortage of kids who love technology. There's a shortage of programs that meet them where they are.</h2>
@@ -737,7 +740,34 @@
           <div style="display:flex;gap:14px;align-items:flex-start;background:#F3F4FA;border-radius:10px;padding:20px 22px;"><span style="color:#FF6B1A;font-size:20px;line-height:1;flex-shrink:0;">▣</span><div><div style="font-weight:700;font-size:16px;margin-bottom:4px;">Community-rooted</div><div style="font-size:14.5px;color:#56607a;line-height:1.5;">We partner directly with Sacramento-area school districts.</div></div></div>
           <div style="display:flex;gap:14px;align-items:flex-start;background:#F3F4FA;border-radius:10px;padding:20px 22px;grid-column:span 2;"><span style="color:#FF6B1A;font-size:20px;line-height:1;flex-shrink:0;">▣</span><div><div style="font-weight:700;font-size:16px;margin-bottom:4px;">Accessible pathways</div><div style="font-size:14.5px;color:#56607a;line-height:1.5;">Scholarships available, and expanded learning programs at no cost to families.</div></div></div>
         </div>
+        <div style="margin-top:34px;">
+          <button onClick="{{ scrollToGallery }}" style="cursor:pointer;background:#1A3EE8;color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border:none;border-radius:6px;">Moments from Our Programs</button>
+        </div>
       </div>
+    </section>
+    <section id="moments-gallery" style="background:#F8F9FC;padding:64px 0;scroll-margin-top:120px;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:14px;">GALLERY</div>
+        <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:32px;letter-spacing:-1px;margin:0 0 12px;">Moments from Our Programs</h2>
+        <p style="font-size:16.5px;color:#56607a;line-height:1.6;max-width:680px;margin:0 0 36px;">Take a look at students learning, building, creating, and collaborating through our hands-on programs.</p>
+        <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+          <sc-for list="{{ galleryImages }}" as="img" hint-placeholder-count="9">
+            <div class="img-hover-zoom" onClick="{{ img.open }}" style="cursor:pointer;aspect-ratio:4/3;border-radius:12px;border:1px solid #e6e9f4;overflow:hidden;box-shadow:0 10px 24px rgba(10,12,24,0.08);">
+              <img src="{{ img.src }}" alt="{{ img.alt }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(6,8,15,0.92);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;">
+        <button onClick="{{ closeLightbox }}" aria-label="Close" style="cursor:pointer;position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.12);color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:22px;line-height:1;">×</button>
+        <button onClick="{{ prevLightbox }}" aria-label="Previous image" style="cursor:pointer;position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);color:#fff;border:none;width:52px;height:52px;border-radius:50%;font-size:22px;">‹</button>
+        <button onClick="{{ nextLightbox }}" aria-label="Next image" style="cursor:pointer;position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);color:#fff;border:none;width:52px;height:52px;border-radius:50%;font-size:22px;">›</button>
+        <sc-if value="{{ lightboxSrc }}" hint-placeholder-val="{{ false }}">
+        <img src="{{ lightboxSrc }}" alt="{{ lightboxAlt }}" onClick="{{ stopClick }}" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+        </sc-if>
+      </div>
+      </sc-if>
     </section>
     <section style="background:#F3F4FA;padding:60px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
@@ -767,7 +797,7 @@
         </div>
       </div>
     </section>
-    <section style="background:#fff;padding:60px 0;">
+    <section id="find-us" style="background:#fff;padding:60px 0;scroll-margin-top:120px;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;color:#1A3EE8;text-transform:uppercase;font-weight:700;margin-bottom:14px;">FIND US</div>
         <h2 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:30px;letter-spacing:-1px;margin:0 0 8px;">Two studios. One Sacramento home base.</h2>
@@ -841,16 +871,15 @@
   <!-- ============ FOR CHARTER PARENTS ============ -->
   <sc-if value="{{ isCharter }}" hint-placeholder-val="{{ false }}">
   <div>
-    <section style="background:#0A0C18;color:#fff;padding:60px 0;">
+    <section style="color: #fff; padding: 60px 0; background-color: #0A0C18">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;">
         <div>
           <div style="font-family:Consolas,monospace;font-size:12px;letter-spacing:3px;color:#FFCC00;text-transform:uppercase;margin-bottom:16px;">FOR CHARTER SCHOOL PARENTS</div>
           <h1 style="font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:46px;letter-spacing:-1.5px;line-height:1.02;margin:0 0 18px;">Use your student's learning funds at eSTEAMED.</h1>
           <p style="font-size:17px;color:#B8BCCE;line-height:1.6;margin:0;">If your child attends a charter school with a personal learning plan, you may be able to use education funds to enroll in eSTEAMED Academy programs — through your charter's vendor approval process or direct billing to your Education Spending Account (ESA).</p>
         </div>
-        <div style="aspect-ratio:4/3.4;border-radius:12px;background:repeating-linear-gradient(135deg,#15182a,#15182a 14px,#181c30 14px,#181c30 28px);border:1px solid #262b45;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
-          <span style="font-size:28px;">👨‍👩‍👧</span>
-          <span style="font-family:Consolas,monospace;font-size:11px;color:#7B81A0;text-transform:uppercase;letter-spacing:1px;text-align:center;">Photo · charter family</span>
+        <div class="img-hover-zoom" style="aspect-ratio:4/3.4;border-radius:12px;border:1px solid #262b45;overflow:hidden;box-shadow:0 20px 44px rgba(10,12,24,0.1);">
+          <img src="uploads/Screenshot 2026-07-30 at 11.21.35 AM.png" alt="Charter family students in class" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
         </div>
       </div>
     </section>
@@ -1410,7 +1439,7 @@
   <sc-if value="{{ isEnroll }}" hint-placeholder-val="{{ false }}">
   <div>
     <section class="enroll-hero-video-sec" style="background:#0A0C18;color:#fff;position:relative;overflow:hidden;height:640px;display:flex;align-items:center;">
-      <video ref="{{ heroVideoRef }}" class="enroll-hero-video" autoplay muted loop playsinline preload="auto" poster="uploads/ChatGPT Image Jul 22, 2026, 11_07_54 AM-15c60e63.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
+      <video ref="{{ heroVideoRef }}" class="enroll-hero-video" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="uploads/ChatGPT Image Jul 22, 2026, 11_07_54 AM-15c60e63.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
         <source src="uploads/enroll_now_vdo.mp4" type="video/mp4">
       </video>
       <img class="enroll-hero-poster" src="uploads/ChatGPT Image Jul 22, 2026, 11_07_54 AM-15c60e63.png" alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
@@ -1522,6 +1551,20 @@
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwXvULQvjy-lp8WrLZ0Wk_qXqLNKuTCeGQjFnYgJyBGu81WIJxDCot8ZUG5WJbcQRW_/exec";
 
 // Hero slideshow images — update this array to change the homepage hero slides.
+const GALLERY_IMAGES = [
+  { src: "uploads/20260430_180345.jpg", alt: "Students collaborating in the eSTEAMED makerspace with laptops and worksheets" },
+  { src: "uploads/20260430_180349.jpg", alt: "Students working at tables in the makerspace near the 3D printers" },
+  { src: "uploads/20260430_180457.jpg", alt: "Students and staff working together during a print program workshop" },
+  { src: "uploads/20260507_184629.jpg", alt: "Close-up of hands assembling a Snap Circuits electronics kit" },
+  { src: "uploads/20260507_190159.jpg", alt: "Adults reviewing program materials together at a table" },
+  { src: "uploads/20260511_171504.jpg", alt: "Students working with laptops during a coding activity" },
+  { src: "uploads/20260512_165424.jpg", alt: "A staff member helping students with a hands-on craft project" },
+  { src: "uploads/20260512_165451.jpg", alt: "Students engaged in group activity in a classroom setting" },
+  { src: "uploads/20260622_121317.jpg", alt: "Students seated at desks participating in a classroom lesson" },
+  { src: "uploads/20260623_093914.jpg", alt: "Students assembling a build-your-own speaker kit" },
+  { src: "uploads/20260623_093932.jpg", alt: "Staff and students discussing a hands-on electronics project" },
+  { src: "uploads/20260624_110636.jpg", alt: "Students working on a craft project with markers and paper" }
+];
 const heroImages = [
   "uploads/ChatGPT Image Jul 22, 2026, 11_07_54 AM-15c60e63.png",
   "uploads/ChatGPT Image Jul 22, 2026, 11_09_12 AM.png",
@@ -1532,7 +1575,7 @@ const heroImages = [
 const HERO_SLIDE_INTERVAL_MS = 3500;
 
 class Component extends DCLogic {
-  state = { page: 'home', openMenu: null, faqOpen: 0, resourceTab: 'faq', submitted: {}, formStatus: {}, heroIndex: 0 };
+  state = { page: 'home', openMenu: null, faqOpen: 0, resourceTab: 'faq', submitted: {}, formStatus: {}, heroIndex: 0, lightboxIndex: null };
 
   componentDidMount() {
     if (typeof super.componentDidMount === 'function') super.componentDidMount();
@@ -1544,6 +1587,40 @@ class Component extends DCLogic {
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }) : null;
     this.enhanceDOM();
     this.enhanceHeroVideo();
+    this._onPopState = (e) => {
+      const st = e.state || {};
+      if (st.page) {
+        this.setState({ page: st.page, openMenu: null });
+        if (st.scrollToId) {
+          setTimeout(() => {
+            const el = document.getElementById(st.scrollToId);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 60);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      }
+    };
+    window.addEventListener('popstate', this._onPopState);
+    this._onKeydown = (e) => {
+      if (this.state.lightboxIndex === null) return;
+      if (e.key === 'Escape') this.setState({ lightboxIndex: null });
+      if (e.key === 'ArrowRight') this.setState(s => ({ lightboxIndex: (s.lightboxIndex + 1) % GALLERY_IMAGES.length }));
+      if (e.key === 'ArrowLeft') this.setState(s => ({ lightboxIndex: (s.lightboxIndex + GALLERY_IMAGES.length - 1) % GALLERY_IMAGES.length }));
+    };
+    window.addEventListener('keydown', this._onKeydown);
+    this._touchStartX = null;
+    this._onTouchStart = (e) => { this._touchStartX = e.touches[0].clientX; };
+    this._onTouchEnd = (e) => {
+      if (this._touchStartX === null || this.state.lightboxIndex === null) return;
+      const dx = e.changedTouches[0].clientX - this._touchStartX;
+      if (Math.abs(dx) > 50) {
+        this.setState(s => ({ lightboxIndex: (s.lightboxIndex + (dx < 0 ? 1 : GALLERY_IMAGES.length - 1)) % GALLERY_IMAGES.length }));
+      }
+      this._touchStartX = null;
+    };
+    document.addEventListener('touchstart', this._onTouchStart);
+    document.addEventListener('touchend', this._onTouchEnd);
     heroImages.forEach(src => {
       const img = new Image();
       img.onerror = () => console.error('Hero slide failed to load:', src);
@@ -1568,21 +1645,30 @@ class Component extends DCLogic {
     if (this._heroTimer) clearInterval(this._heroTimer);
     if (this._heroErrHandler) document.removeEventListener('error', this._heroErrHandler, true);
     if (this._io) this._io.disconnect();
+    if (this._onPopState) window.removeEventListener('popstate', this._onPopState);
+    if (this._onKeydown) window.removeEventListener('keydown', this._onKeydown);
+    document.removeEventListener('touchstart', this._onTouchStart);
+    document.removeEventListener('touchend', this._onTouchEnd);
     if (typeof super.componentWillUnmount === 'function') super.componentWillUnmount();
   }
   componentDidUpdate() { this.enhanceDOM(); this.enhanceHeroVideo(); }
 
   // React drops video boolean attrs like muted/loop silently; set them imperatively so autoplay isn't blocked.
+  getGalleryImages = () => GALLERY_IMAGES.map((img, i) => ({
+    src: img.src, alt: img.alt, open: () => this.setState({ lightboxIndex: i })
+  }));
   heroVideoRef = (el) => { this._heroVideoEl = el; };
+  progsHeroVideoRef = (el) => { this._progsHeroVideoEl = el; };
   enhanceHeroVideo = () => {
-    const v = this._heroVideoEl;
-    if (!v || v.dataset.enhanced) return;
-    v.dataset.enhanced = '1';
-    v.muted = true;
-    v.loop = true;
-    v.playsInline = true;
-    const play = () => v.play().catch(() => {});
-    if (v.readyState >= 2) play(); else v.addEventListener('loadeddata', play, { once: true });
+    [this._heroVideoEl, this._progsHeroVideoEl].forEach((v) => {
+      if (!v || v.dataset.enhanced) return;
+      v.dataset.enhanced = '1';
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+      const play = () => v.play().catch(() => {});
+      if (v.readyState >= 2) play(); else v.addEventListener('loadeddata', play, { once: true });
+    });
   };
 
   // Applies scroll-reveal + hover-lift + button-hover classes to plain DOM (no re-render cost).
@@ -1642,12 +1728,14 @@ class Component extends DCLogic {
   };
 
   go(page, scrollToId) {
+    const samePage = this.state.page === page;
     this.setState({ page, openMenu: null });
+    try { history.pushState({ page, scrollToId: scrollToId || null }, '', scrollToId ? ('#' + scrollToId) : '#' + page); } catch (e) {}
     if (scrollToId) {
       setTimeout(() => {
         const el = document.getElementById(scrollToId);
-        if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
-      }, 50);
+        if (el) el.scrollIntoView({ behavior: samePage ? 'smooth' : 'instant', block: 'start' });
+      }, samePage ? 0 : 60);
       return;
     }
     try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, 0); }
@@ -1699,6 +1787,19 @@ class Component extends DCLogic {
     const faqs = faqData.map((f, i) => ({ q: f.q, a: f.a, idx: String(i), open: this.state.faqOpen === i }));
     return {
       heroVideoRef: this.heroVideoRef,
+      galleryImages: this.getGalleryImages(),
+      lightboxOpen: this.state.lightboxIndex !== null,
+      lightboxSrc: this.state.lightboxIndex !== null ? GALLERY_IMAGES[this.state.lightboxIndex].src : '',
+      lightboxAlt: this.state.lightboxIndex !== null ? GALLERY_IMAGES[this.state.lightboxIndex].alt : '',
+      closeLightbox: () => this.setState({ lightboxIndex: null }),
+      stopClick: (e) => e.stopPropagation(),
+      prevLightbox: (e) => { e.stopPropagation(); this.setState(s => ({ lightboxIndex: (s.lightboxIndex + GALLERY_IMAGES.length - 1) % GALLERY_IMAGES.length })); },
+      nextLightbox: (e) => { e.stopPropagation(); this.setState(s => ({ lightboxIndex: (s.lightboxIndex + 1) % GALLERY_IMAGES.length })); },
+      scrollToGallery: () => {
+        const el = document.getElementById('moments-gallery');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      },
+      progsHeroVideoRef: this.progsHeroVideoRef,
       heroOpacity0: this.state.heroIndex === 0 ? 1 : 0,
       heroOpacity1: this.state.heroIndex === 1 ? 1 : 0,
       heroOpacity2: this.state.heroIndex === 2 ? 1 : 0,
