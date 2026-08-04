@@ -1,0 +1,26 @@
+eSTEAMED ACADEMY — WEBSITE COPY DRAFT
+Section: Programs → Academy &amp; Maker Space (SUPPLEMENTAL — gap-fill additions)
+COPY NOTE: This doc only contains NEW modules to slot into the existing built page — it doesn&apos;t repeat what&apos;s already live in Figma. Placement guidance is noted above each module. Sersi — please insert these in addition to, not instead of, current content.
+
+NEW MODULE — INSERT BETWEEN &apos;CLASSES OFFERED&apos; AND &apos;MAKERS MONDAYS&apos;
+Built Something Here? Take It to the Competition Floor.
+Every skill you pick up in a Makerspace class — code, CAD, circuits — is also a skill our Labs &amp; Leagues teams compete with. When you&apos;re ready for more than a class, there&apos;s a team waiting.
+[CTA Button: Explore Labs &amp; Leagues]
+COPY NOTE: This module ties the Makerspace page into the Labs-to-Leagues funnel, which is the core strategic mechanic of the business. Recommend a visually distinct band (different background color, e.g. cobalt or ember) so it reads as a transition point rather than another class card.
+
+NEW FIELD — ADD TO EACH CLASS CARD (GAME DEV, 3D PRINTING, PRINTER BUILD, AI EXPLORERS, CODING FUNDAMENTALS)
+Schedule &amp; Pricing Line
+Recommend a consistent third metadata line under &apos;AGES __ • LEVEL&apos; on every class card, formatted like:
+[Day/Time — e.g., &apos;Tuesdays, 4:00–5:00 PM&apos;] • [Session length — e.g., &apos;8-week session&apos;]
+[Price — e.g., &apos;Starting at $___/session&apos;] [+ materials fee if applicable]
+COPY NOTE: None of these specifics are finalized. Placeholder format above is meant to show Sersi where the fields go so the layout can be built now and populated later. Printer Build class in particular will need a materials-fee note since the student keeps the hardware.
+
+NEW MODULE — INSERT AS FINAL SECTION, AFTER MAKERS MONDAYS
+Ready to Get Your Kid Building?
+Classes fill by session — reserve a spot before the next one starts.
+[CTA Button: Enroll Now]   [CTA Button: View Full Class Schedule]
+COPY NOTE: Every other page drafted so far (Company Overview, Why eSTEAMED, Our Locations) ends on a closing CTA — this brings Academy &amp; Maker Space in line with that pattern. Confirm CTA destination: same enrollment flow as Makers Mondays, or a separate paid-class registration path?
+
+OPEN ITEM — NOT A COPY CHANGE, NEEDS YOUR CONFIRMATION
+Makerspace Location
+This page states the makerspace is at 4625 44th Street. The About → Company Overview and Our Locations drafts currently list 1150 Eastern Avenue as the flagship &apos;Innovation Studio&apos; and treat 4625 44th Street as unconfirmed. Once you confirm which address is correct for the Makerspace, I&apos;ll update both About pages to match so the whole site is consistent.
